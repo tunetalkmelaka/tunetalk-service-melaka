@@ -1,109 +1,493 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TuneTalk Service Melaka</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:#f5f5f5;
-}
+  <title>TuneTalk Service Melaka | SIM、MNP、eSIM 与手机维修</title>
 
-header{
-background:#d60000;
-color:white;
-padding:30px;
-text-align:center;
-}
+  <meta name="description" content="TuneTalk Service Melaka 提供 TuneTalk 新号码、MNP 保留原号码、eSIM、APN 设置教学与手机维修服务。">
+  <meta name="keywords" content="TuneTalk Melaka, TuneTalk MNP, TuneTalk eSIM, TuneTalk APN, 手机维修 Melaka">
 
-h1{
-margin:0;
-font-size:42px;
-}
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-.hero{
-padding:50px;
-text-align:center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
 
-.btn{
-display:inline-block;
-background:#d60000;
-color:white;
-padding:15px 30px;
-text-decoration:none;
-border-radius:8px;
-font-size:20px;
-}
+    nav {
+      background: #111;
+      color: white;
+      padding: 15px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.section{
-background:white;
-margin:20px;
-padding:30px;
-border-radius:10px;
-}
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: #ff2020;
+    }
 
-footer{
-background:#222;
-color:white;
-padding:20px;
-text-align:center;
-}
-</style>
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
 
+    .nav-links a:hover {
+      color: #ff3030;
+    }
+
+    .hero {
+      min-height: 520px;
+      padding: 90px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(110,0,0,0.95), rgba(235,0,0,0.88)),
+        radial-gradient(circle at top right, #ff5555, #770000);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin: 0 0 15px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin: 0 0 15px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 6px;
+      transition: 0.2s;
+    }
+
+    .btn-red {
+      background: white;
+      color: #d60000;
+    }
+
+    .btn-dark {
+      background: #111;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin: 0;
+      color: #b80000;
+    }
+
+    .section-title p {
+      color: #666;
+      margin-top: 8px;
+    }
+
+    .plans,
+    .services,
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #c90000;
+      font-size: 24px;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .price span {
+      font-size: 15px;
+      color: #777;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .services .card {
+      text-align: center;
+    }
+
+    .service-icon {
+      font-size: 42px;
+      margin-bottom: 8px;
+    }
+
+    .why {
+      background: #111;
+      color: white;
+    }
+
+    .why .section-title h2 {
+      color: #ff3434;
+    }
+
+    .why .section-title p {
+      color: #ddd;
+    }
+
+    .why .card {
+      background: #1d1d1d;
+      color: white;
+      box-shadow: none;
+    }
+
+    .contact-box {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 14px;
+      padding: 35px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin: 8px 0;
+    }
+
+    footer {
+      background: #090909;
+      color: #ccc;
+      text-align: center;
+      padding: 25px;
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      padding: 15px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+
+    @media (max-width: 900px) {
+      .plans,
+      .services,
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 460px;
+        padding: 70px 6%;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
+  <nav>
+    <div class="logo">TuneTalk Service Melaka</div>
 
-<h1>TuneTalk Service Melaka</h1>
+    <div class="nav-links">
+      <a href="#home">首页</a>
+      <a href="#plans">配套</a>
+      <a href="#services">服务</a>
+      <a href="#about">为什么选择我们</a>
+      <a href="#contact">联系我们</a>
+    </div>
+  </nav>
 
-<p>Official Online Registration Centre</p>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>TuneTalk Service Melaka</h1>
+      <h2>新号码 · MNP · eSIM · APN 教学 · 手机维修</h2>
 
-</header>
+      <p>
+        提供 TuneTalk 配套咨询、保留原号码转台、eSIM 服务、
+        网络设置协助及手机维修。
+      </p>
 
-<div class="hero">
+      <a class="btn btn-red"
+         href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。"
+         target="_blank">
+        WhatsApp 立即咨询
+      </a>
 
-<h2>EPIK35+ | EPIK50+</h2>
+      <a class="btn btn-dark" href="#plans">
+        查看配套
+      </a>
+    </div>
+  </header>
 
-<p>New SIM • MNP • eSIM • Mobile Repair</p>
+  <section id="plans">
+    <div class="section-title">
+      <h2>热门 TuneTalk 配套</h2>
+      <p>选择适合你的高速数据配套</p>
+    </div>
 
-<a class="btn" href="https://wa.me/60105377777">
+    <div class="plans">
 
-WhatsApp Now
+      <div class="card">
+        <h3>EPIK35+</h3>
+        <div class="price">RM35 <span>/ 月</span></div>
 
-</a>
+        <ul>
+          <li>200GB 高速数据</li>
+          <li>4G / 5G 网络</li>
+          <li>Unlimited Hotspot</li>
+          <li>Unlimited Call</li>
+          <li>No Speed Cap</li>
+        </ul>
 
+        <a class="btn btn-dark"
+           href="https://wa.me/60105377777?text=你好，我想申请 EPIK35+。"
+           target="_blank">
+          申请 EPIK35+
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>EPIK50+</h3>
+        <div class="price">RM50 <span>/ 月</span></div>
+
+        <ul>
+          <li>500GB 高速数据</li>
+          <li>4G / 5G 网络</li>
+          <li>Unlimited Hotspot</li>
+          <li>Unlimited Call</li>
+          <li>指定国家免费漫游</li>
+        </ul>
+
+        <a class="btn btn-dark"
+           href="https://wa.me/60105377777?text=你好，我想申请 EPIK50+。"
+           target="_blank">
+          申请 EPIK50+
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>MNP 保留原号码</h3>
+        <div class="price">免费 <span>申请协助</span></div>
+
+        <ul>
+          <li>保留现有手机号码</li>
+          <li>转换至 TuneTalk</li>
+          <li>门市协助申请</li>
+          <li>提供注册流程指导</li>
+          <li>WhatsApp 快速咨询</li>
+        </ul>
+
+        <a class="btn btn-dark"
+           href="https://wa.me/60105377777?text=你好，我想保留原号码转去 TuneTalk。"
+           target="_blank">
+          申请 MNP
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>我们的服务</h2>
+      <p>从申请到使用，我们为你提供协助</p>
+    </div>
+
+    <div class="services">
+
+      <div class="card">
+        <div class="service-icon">
+￼
 </div>
+        <h3>新 SIM 申请</h3>
+        <p>协助选择配套及办理 TuneTalk 新号码。</p>
+      </div>
 
-<div class="section">
-
-<h2>Our Services</h2>
-
-✅ TuneTalk New SIM<br><br>
-
-✅ MNP Keep Number<br><br>
-
-✅ eSIM Registration<br><br>
-
-✅ Mobile Phone Repair<br><br>
-
-✅ APN Setting Guide<br><br>
-
+      <div class="card">
+        <div class="service-icon">
+￼
 </div>
+        <h3>MNP 转台</h3>
+        <p>保留原号码转换至 TuneTalk。</p>
+      </div>
 
-<footer>
+      <div class="card">
+        <div class="service-icon">
+￼
+</div>
+        <h3>eSIM 服务</h3>
+        <p>提供 eSIM 申请与安装指导。</p>
+      </div>
 
-WhatsApp : 010-5377777<br>
+      <div class="card">
+        <div class="service-icon">
+￼
+</div>
+        <h3>APN 设置</h3>
+        <p>OPPO、vivo、Samsung、HONOR、Infinix、TECNO 等品牌设置教学。</p>
+      </div>
 
-TuneTalk Service Melaka<br>
+      <div class="card">
+        <div class="service-icon">
+￼
+</div>
+        <h3>手机维修</h3>
+        <p>手机检测、屏幕、电池及一般维修服务。</p>
+      </div>
 
-No.49 Jalan Rambai Jaya 2,<br>
+      <div class="card">
+        <div class="service-icon">
+￼
+</div>
+        <h3>WhatsApp 咨询</h3>
+        <p>快速询问配套、转台、设置及维修问题。</p>
+      </div>
 
-Taman Rambai Jaya,<br>
+    </div>
+  </section>
 
-75250 Melaka, Malaysia
+  <section class="why" id="about">
+    <div class="section-title">
+      <h2>为什么选择我们</h2>
+      <p>本地门市支持，申请与售后更方便</p>
+    </div>
+
+    <div class="features">
+
+      <div class="card">
+        <h3>本地门市服务</h3>
+        <p>位于 Melaka，顾客可到店咨询及获得协助。</p>
+      </div>
+
+      <div class="card">
+        <h3>三语沟通</h3>
+        <p>支持中文、Bahasa Melayu 和 English。</p>
+      </div>
+
+      <div class="card">
+        <h3>售后协助</h3>
+        <p>提供 APN、网络、SIM 及手机设置支援。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-title">
+      <h2>联系我们</h2>
+      <p>欢迎到店或通过 WhatsApp 咨询</p>
+    </div>
+
+    <div class="contact-box">
+      <h3>TuneTalk Service Melaka</h3>
+
+      <p><strong>WhatsApp：</strong>010-5377777</p>
+
+      <p>
+        <strong>地址：</strong><br>
+        No. 49, Jalan Rambai Jaya 2,<br>
+        Taman Rambai Jaya,<br>
+        75250 Melaka, Malaysia
+      </p>
+
+      <p><strong>营业时间：</strong>1:00 PM – 10:00 PM</p>
+
+      <a class="btn btn-dark"
+         href="https://wa.me/60105377777"
+         target="_blank">
+        联系我们
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 TuneTalk Service Melaka. All Rights Reserved.
+  </footer>
+
+  <a class="floating-whatsapp"
+     href="https://wa.me/60105377777?text=你好，我从你的网站看到 TuneTalk 服务。"
+     target="_blank">
+    WhatsApp
+  </a>
+
+</body>
+</html>
