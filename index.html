@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#cf1019">
   <meta name="description" content="TuneTalk Service：Tune Talk 配套咨询、MNP 保留号码、eSIM、APN 设置与手机维修服务。">
-  <title>TuneTalk Service | SIM · MNP · eSIM</title>
+  <title>TuneTalk Service | Nationwide SIM · MNP · eSIM Support</title>
   <style>
     :root {
       --red: #e31b23;
@@ -71,6 +71,12 @@
       display: none; padding: 10px 17px; border-radius: 999px;
       background: var(--red); color: #fff !important;
     }
+    .language-select {
+      min-height: 38px; padding: 0 30px 0 12px; border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px; color: #fff; background: #202126; font: inherit;
+      font-size: .8rem; font-weight: 800; cursor: pointer;
+    }
+    .language-select option { color: #111; background: #fff; }
     .menu-button {
       width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.16);
       border-radius: 12px; color: #fff; background: rgba(255,255,255,.06);
@@ -166,6 +172,18 @@
     .dark .section-heading p { color: #b9bbc2; }
 
     .plan-grid, .service-grid, .why-grid { display: grid; gap: 18px; }
+    .journey-grid { display: grid; gap: 16px; counter-reset: journey; }
+    .journey-card {
+      position: relative; padding: 26px; border: 1px solid var(--line);
+      border-radius: 22px; background: #fff;
+    }
+    .journey-card::before {
+      counter-increment: journey; content: "0" counter(journey);
+      display: block; margin-bottom: 22px; color: var(--red); font-size: 2rem;
+      font-weight: 950; letter-spacing: -.06em;
+    }
+    .journey-card h3 { margin: 0 0 8px; }
+    .journey-card p { margin: 0; color: var(--muted); font-size: .93rem; }
     .plan-card, .service-card, .why-card {
       position: relative; overflow: hidden; border: 1px solid var(--line);
       border-radius: var(--radius); background: #fff; box-shadow: 0 14px 40px rgba(20,20,25,.07);
@@ -223,6 +241,27 @@
     }
     .contact-note strong { font-size: 1.2rem; }
 
+    .faq-list { width: min(880px, 100%); margin: auto; display: grid; gap: 12px; }
+    .faq-item {
+      overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #fff;
+    }
+    .faq-question {
+      width: 100%; padding: 20px 22px; display: flex; align-items: center;
+      justify-content: space-between; gap: 18px; border: 0; color: var(--ink);
+      background: transparent; text-align: left; font: inherit; font-weight: 850; cursor: pointer;
+    }
+    .faq-question span:last-child { color: var(--red); font-size: 1.3rem; }
+    .faq-answer {
+      max-height: 0; overflow: hidden; padding: 0 22px; color: var(--muted);
+      transition: max-height .3s ease, padding .3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 220px; padding: 0 22px 20px; }
+
+    .corporate-bar {
+      padding: 12px 20px; color: #fff; background: var(--red); text-align: center;
+      font-size: .82rem; font-weight: 800; letter-spacing: .01em;
+    }
+
     .footer { padding: 38px 20px 92px; color: #aeb0b6; background: #09090b; }
     .footer-inner { width: min(1160px, 100%); margin: auto; display: grid; gap: 24px; }
     .footer-brand { color: #fff; font-size: 1.2rem; font-weight: 900; }
@@ -253,6 +292,7 @@
       .plan-grid { grid-template-columns: repeat(3, 1fr); }
       .service-grid { grid-template-columns: repeat(2, 1fr); }
       .why-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-grid { grid-template-columns: repeat(2, 1fr); }
       .contact-wrap { grid-template-columns: 1.5fr .8fr; }
       .contact-copy { padding: 52px; }
       .contact-note { padding: 38px; }
@@ -264,6 +304,7 @@
       .menu-button, .mobile-menu { display: none; }
       .service-grid { grid-template-columns: repeat(3, 1fr); }
       .why-grid { grid-template-columns: repeat(4, 1fr); }
+      .journey-grid { grid-template-columns: repeat(4, 1fr); }
       .section { padding-block: 100px; }
       .hero-controls { inset-inline: 34px; }
     }
@@ -283,6 +324,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">跳到主要内容</a>
+  <div class="corporate-bar" data-i18n="notice">Nationwide online support · SIM registration is completed through authorised Tune Talk channels</div>
 
   <nav class="nav" aria-label="主要导航">
     <div class="nav-inner">
@@ -291,23 +333,29 @@
         <span class="brand-text"><b>TuneTalk</b> Service</span>
       </a>
       <div class="nav-links">
-        <a href="#home">首页</a>
-        <a href="#plans">配套</a>
-        <a href="#services">服务</a>
-        <a href="#why">为什么选择我们</a>
-        <a href="#contact">联系</a>
+        <a href="#home" data-i18n="navHome">首页</a>
+        <a href="#plans" data-i18n="navPlans">配套</a>
+        <a href="#services" data-i18n="navServices">服务</a>
+        <a href="#process" data-i18n="navProcess">申请流程</a>
+        <a href="#faq">FAQ</a>
       </div>
+      <select class="language-select" aria-label="Language">
+        <option value="bm">BM</option>
+        <option value="en">EN</option>
+        <option value="zh">中文</option>
+      </select>
       <a class="nav-cta" href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk Service。" target="_blank" rel="noopener">WhatsApp</a>
       <button class="menu-button" type="button" aria-label="打开菜单" aria-expanded="false">☰</button>
     </div>
   </nav>
 
   <div class="mobile-menu" aria-hidden="true">
-    <a href="#home">首页</a>
-    <a href="#plans">配套</a>
-    <a href="#services">服务</a>
-    <a href="#why">为什么选择我们</a>
-    <a href="#contact">联系我们</a>
+    <a href="#home" data-i18n="navHome">首页</a>
+    <a href="#plans" data-i18n="navPlans">配套</a>
+    <a href="#services" data-i18n="navServices">服务</a>
+    <a href="#process" data-i18n="navProcess">申请流程</a>
+    <a href="#why" data-i18n="navWhy">为什么选择我们</a>
+    <a href="#contact" data-i18n="navContact">联系我们</a>
   </div>
 
   <main id="main">
@@ -337,18 +385,18 @@
     </header>
 
     <div class="quick-strip reveal" aria-label="主要服务">
-      <div class="quick-item"><strong>New SIM</strong><span>新号码申请</span></div>
-      <div class="quick-item"><strong>MNP</strong><span>保留原号码</span></div>
-      <div class="quick-item"><strong>eSIM</strong><span>安装与咨询</span></div>
-      <div class="quick-item"><strong>Support</strong><span>全国线上协助</span></div>
+      <div class="quick-item"><strong>New SIM</strong><span data-i18n="quick1">新号码申请</span></div>
+      <div class="quick-item"><strong>MNP</strong><span data-i18n="quick2">保留原号码</span></div>
+      <div class="quick-item"><strong>eSIM</strong><span data-i18n="quick3">安装与咨询</span></div>
+      <div class="quick-item"><strong>Support</strong><span data-i18n="quick4">全国线上协助</span></div>
     </div>
 
     <section class="section" id="plans">
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Popular Plans</span>
-          <h2>选择适合你的配套</h2>
-          <p>配套内容可能随官方促销更新，申请前可通过 WhatsApp 向我们确认最新详情。</p>
+          <h2 data-i18n="plansTitle">选择适合你的配套</h2>
+          <p data-i18n="plansText">配套内容可能随官方促销更新，申请前可通过 WhatsApp 向我们确认最新详情。</p>
         </div>
         <div class="plan-grid">
           <article class="plan-card reveal">
@@ -356,33 +404,33 @@
             <h3>EPIK35+</h3>
             <div class="plan-price">RM35 <small>/ 月</small></div>
             <ul class="plan-list">
-              <li>高速 4G / 5G 数据</li>
-              <li>通话与热点配套选择</li>
-              <li>申请与设置协助</li>
+              <li data-i18n="p35a">高速 4G / 5G 数据</li>
+              <li data-i18n="p35b">通话与热点配套选择</li>
+              <li data-i18n="p35c">申请与设置协助</li>
             </ul>
-            <a class="button full" href="https://wa.me/60105377777?text=你好，我想了解 EPIK35+ 最新配套。" target="_blank" rel="noopener">查询 EPIK35+</a>
+            <a class="button full" href="https://wa.me/60105377777?text=你好，我想了解 EPIK35+ 最新配套。" target="_blank" rel="noopener" data-i18n="p35Cta">查询 EPIK35+</a>
           </article>
           <article class="plan-card featured reveal">
             <span class="eyebrow">More Data</span>
             <h3>EPIK50+</h3>
             <div class="plan-price">RM50 <small>/ 月</small></div>
             <ul class="plan-list">
-              <li>更高数据用量选择</li>
-              <li>适合重度网络用户</li>
-              <li>漫游与最新优惠咨询</li>
+              <li data-i18n="p50a">更高数据用量选择</li>
+              <li data-i18n="p50b">适合重度网络用户</li>
+              <li data-i18n="p50c">漫游与最新优惠咨询</li>
             </ul>
-            <a class="button full" href="https://wa.me/60105377777?text=你好，我想了解 EPIK50+ 最新配套。" target="_blank" rel="noopener">查询 EPIK50+</a>
+            <a class="button full" href="https://wa.me/60105377777?text=你好，我想了解 EPIK50+ 最新配套。" target="_blank" rel="noopener" data-i18n="p50Cta">查询 EPIK50+</a>
           </article>
           <article class="plan-card reveal">
             <span class="eyebrow">Keep Your Number</span>
             <h3>MNP 转台</h3>
             <div class="plan-price">原号 <small>继续使用</small></div>
             <ul class="plan-list">
-              <li>保留现有手机号码</li>
-              <li>申请步骤清楚说明</li>
-              <li>通过授权流程完成注册</li>
+              <li data-i18n="mnpA">保留现有手机号码</li>
+              <li data-i18n="mnpB">申请步骤清楚说明</li>
+              <li data-i18n="mnpC">通过授权流程完成注册</li>
             </ul>
-            <a class="button full" href="https://wa.me/60105377777?text=你好，我想保留原号码转去 Tune Talk。" target="_blank" rel="noopener">咨询 MNP</a>
+            <a class="button full" href="https://wa.me/60105377777?text=你好，我想保留原号码转去 Tune Talk。" target="_blank" rel="noopener" data-i18n="mnpCta">咨询 MNP</a>
           </article>
         </div>
       </div>
@@ -392,16 +440,44 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Our Services</span>
-          <h2>从申请到使用，都有人协助</h2>
-          <p>线上咨询与实体服务结合，让你更轻松地完成申请、设置和售后处理。</p>
+          <h2 data-i18n="servicesTitle">从申请到使用，都有人协助</h2>
+          <p data-i18n="servicesText">线上咨询与实体服务结合，让你更轻松地完成申请、设置和售后处理。</p>
         </div>
         <div class="service-grid">
-          <article class="service-card reveal"><div class="service-icon">▣</div><h3>新 SIM 申请</h3><p>协助选择配套，并引导你通过正式身份验证及注册流程。</p></article>
-          <article class="service-card reveal"><div class="service-icon">↻</div><h3>MNP 保留号码</h3><p>说明转台条件、确认事项和申请步骤，减少转台失败。</p></article>
-          <article class="service-card reveal"><div class="service-icon">◇</div><h3>eSIM 服务</h3><p>查询手机兼容性，并提供开通和安装指导。</p></article>
-          <article class="service-card reveal"><div class="service-icon">⌁</div><h3>APN 设置</h3><p>协助 Samsung、OPPO、vivo、HONOR、Infinix、TECNO 等手机设置网络。</p></article>
-          <article class="service-card reveal"><div class="service-icon">⚙</div><h3>手机维修</h3><p>屏幕、电池、充电和一般手机问题检测与维修咨询。</p></article>
-          <article class="service-card reveal"><div class="service-icon">◉</div><h3>WhatsApp 支援</h3><p>中文、Bahasa Melayu 和 English 咨询，快速获得下一步指引。</p></article>
+          <article class="service-card reveal"><div class="service-icon">▣</div><h3 data-i18n="service1T">新 SIM 申请</h3><p data-i18n="service1D">协助选择配套，并引导你通过正式身份验证及注册流程。</p></article>
+          <article class="service-card reveal"><div class="service-icon">↻</div><h3 data-i18n="service2T">MNP 保留号码</h3><p data-i18n="service2D">说明转台条件、确认事项和申请步骤，减少转台失败。</p></article>
+          <article class="service-card reveal"><div class="service-icon">◇</div><h3 data-i18n="service3T">eSIM 服务</h3><p data-i18n="service3D">查询手机兼容性，并提供开通和安装指导。</p></article>
+          <article class="service-card reveal"><div class="service-icon">⌁</div><h3 data-i18n="service4T">APN 设置</h3><p data-i18n="service4D">协助 Samsung、OPPO、vivo、HONOR、Infinix、TECNO 等手机设置网络。</p></article>
+          <article class="service-card reveal"><div class="service-icon">⚙</div><h3 data-i18n="service5T">手机维修</h3><p data-i18n="service5D">屏幕、电池、充电和一般手机问题检测与维修咨询。</p></article>
+          <article class="service-card reveal"><div class="service-icon">◉</div><h3 data-i18n="service6T">WhatsApp 支援</h3><p data-i18n="service6D">中文、Bahasa Melayu 和 English 咨询，快速获得下一步指引。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Simple & Secure</span>
+          <h2 data-i18n="processTitle">清楚的四步申请流程</h2>
+          <p data-i18n="processText">网站负责咨询与引导；身份验证、SIM 注册和激活保留在官方授权流程内完成。</p>
+        </div>
+        <div class="journey-grid">
+          <article class="journey-card reveal">
+            <h3 data-i18n="step1Title">选择服务</h3>
+            <p data-i18n="step1Text">选择新号码、MNP、eSIM 或其他所需服务。</p>
+          </article>
+          <article class="journey-card reveal">
+            <h3 data-i18n="step2Title">WhatsApp 咨询</h3>
+            <p data-i18n="step2Text">确认配套、资格、所需文件和下一步安排。</p>
+          </article>
+          <article class="journey-card reveal">
+            <h3 data-i18n="step3Title">官方身份验证</h3>
+            <p data-i18n="step3Text">通过 Tune Talk 授权渠道完成原件验证及注册。</p>
+          </article>
+          <article class="journey-card reveal">
+            <h3 data-i18n="step4Title">开通与支援</h3>
+            <p data-i18n="step4Text">完成激活后，我们继续提供 APN 与使用设置协助。</p>
+          </article>
         </div>
       </div>
     </section>
@@ -410,14 +486,50 @@
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">Why Choose Us</span>
-          <h2>清楚、快速、有人跟进</h2>
-          <p>我们重视透明沟通，也把 SIM 身份验证保留在官方授权流程内。</p>
+          <h2 data-i18n="whyTitle">清楚、快速、有人跟进</h2>
+          <p data-i18n="whyText">我们重视透明沟通，也把 SIM 身份验证保留在官方授权流程内。</p>
         </div>
         <div class="why-grid">
-          <article class="why-card reveal"><div class="number">01</div><h3>全国线上咨询</h3><p>不受地区限制，通过 WhatsApp 获取配套和申请协助。</p></article>
-          <article class="why-card reveal"><div class="number">02</div><h3>三语沟通</h3><p>支持中文、Bahasa Melayu 与 English。</p></article>
-          <article class="why-card reveal"><div class="number">03</div><h3>安全注册流程</h3><p>身份验证和激活通过 Tune Talk 授权系统处理。</p></article>
-          <article class="why-card reveal"><div class="number">04</div><h3>售后设置协助</h3><p>从 APN 到手机网络问题，提供清楚的使用指导。</p></article>
+          <article class="why-card reveal"><div class="number">01</div><h3 data-i18n="why1T">全国线上咨询</h3><p data-i18n="why1D">不受地区限制，通过 WhatsApp 获取配套和申请协助。</p></article>
+          <article class="why-card reveal"><div class="number">02</div><h3 data-i18n="why2T">三语沟通</h3><p data-i18n="why2D">支持中文、Bahasa Melayu 与 English。</p></article>
+          <article class="why-card reveal"><div class="number">03</div><h3 data-i18n="why3T">安全注册流程</h3><p data-i18n="why3D">身份验证和激活通过 Tune Talk 授权系统处理。</p></article>
+          <article class="why-card reveal"><div class="number">04</div><h3 data-i18n="why4T">售后设置协助</h3><p data-i18n="why4D">从 APN 到手机网络问题，提供清楚的使用指导。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 data-i18n="faqTitle">申请前常见问题</h2>
+          <p data-i18n="faqText">先了解基本流程，再通过 WhatsApp 查询最新配套与个别情况。</p>
+        </div>
+        <div class="faq-list reveal">
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq1Q">可以保留现有手机号码吗？</span><span>＋</span>
+            </button>
+            <div class="faq-answer" data-i18n="faq1A">可以申请 MNP 保留号码。申请前需确认现有号码状态、个人资料和原电信公司的回复要求。</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq2Q">可以直接在网站上传身份证吗？</span><span>＋</span>
+            </button>
+            <div class="faq-answer" data-i18n="faq2A">不建议。身份证原件验证和 SIM 注册应通过 Tune Talk 官方授权系统或渠道完成。</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq3Q">如何知道手机是否支持 eSIM？</span><span>＋</span>
+            </button>
+            <div class="faq-answer" data-i18n="faq3A">把手机品牌和完整型号发送给我们，我们会先协助检查兼容性，再说明申请步骤。</div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span data-i18n="faq4Q">更换 SIM 后无法上网怎么办？</span><span>＋</span>
+            </button>
+            <div class="faq-answer" data-i18n="faq4A">可先重新启动手机并检查移动数据。若仍无法使用，我们可通过 WhatsApp 协助检查 APN 和网络设置。</div>
+          </article>
         </div>
       </div>
     </section>
@@ -427,17 +539,17 @@
         <div class="contact-wrap reveal">
           <div class="contact-copy">
             <span class="eyebrow" style="color:#fff">Let’s Talk</span>
-            <h2>准备好申请了吗？</h2>
-            <p>告诉我们你需要新号码、MNP、eSIM、网络设置或手机维修，我们会回复合适的下一步。</p>
+            <h2 data-i18n="contactTitle">准备好申请了吗？</h2>
+            <p data-i18n="contactText">告诉我们你需要新号码、MNP、eSIM、网络设置或手机维修，我们会回复合适的下一步。</p>
             <div class="contact-details">
               <span><strong>WhatsApp：</strong>010-5377777</span>
               <span><strong>营业时间：</strong>1:00 PM – 10:00 PM</span>
             </div>
-            <a class="button secondary" href="https://wa.me/60105377777?text=你好，我从 TuneTalk Service 网站联系你。" target="_blank" rel="noopener">立即 WhatsApp 咨询 →</a>
+            <a class="button secondary" href="https://wa.me/60105377777?text=你好，我从 TuneTalk Service 网站联系你。" target="_blank" rel="noopener" data-i18n="contactCta">立即 WhatsApp 咨询 →</a>
           </div>
           <aside class="contact-note">
-            <strong>注册安全提示</strong>
-            <span>请勿通过普通网页表单发送身份证图片。SIM 注册与身份验证应在 Tune Talk 官方授权流程内完成。</span>
+            <strong data-i18n="safetyTitle">注册安全提示</strong>
+            <span data-i18n="safetyText">请勿通过普通网页表单发送身份证图片。SIM 注册与身份验证应在 Tune Talk 官方授权流程内完成。</span>
           </aside>
         </div>
       </div>
@@ -548,6 +660,141 @@
         document.body.classList.toggle("menu-open", open);
       });
       mobileMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+      const copy = {
+        bm: {
+          notice: "Sokongan dalam talian seluruh Malaysia · Pendaftaran SIM diselesaikan melalui saluran Tune Talk yang dibenarkan",
+          navHome: "Utama", navPlans: "Pelan", navServices: "Perkhidmatan", navProcess: "Cara Memohon", navWhy: "Kenapa Kami", navContact: "Hubungi",
+          quick1: "Permohonan nombor baharu", quick2: "Kekalkan nombor anda", quick3: "Pemasangan & bantuan", quick4: "Sokongan seluruh Malaysia",
+          plansTitle: "Pilih pelan yang sesuai untuk anda", plansText: "Butiran pelan boleh berubah mengikut promosi rasmi. Hubungi kami melalui WhatsApp untuk maklumat terkini sebelum memohon.",
+          p35a: "Data 4G / 5G berkelajuan tinggi", p35b: "Pilihan panggilan dan hotspot", p35c: "Bantuan permohonan dan tetapan",
+          p50a: "Pilihan data yang lebih besar", p50b: "Sesuai untuk pengguna data tinggi", p50c: "Semakan roaming dan promosi terkini",
+          mnpA: "Kekalkan nombor telefon sedia ada", mnpB: "Panduan langkah permohonan", mnpC: "Pendaftaran melalui proses yang dibenarkan",
+          p35Cta: "Semak EPIK35+", p50Cta: "Semak EPIK50+", mnpCta: "Tanya tentang MNP",
+          servicesTitle: "Bantuan dari permohonan hingga penggunaan", servicesText: "Konsultasi dalam talian dan bantuan susulan memudahkan urusan permohonan, tetapan dan sokongan anda.",
+          service1T: "Permohonan SIM Baharu", service1D: "Kami membantu memilih pelan dan membimbing anda melalui pengesahan identiti serta pendaftaran rasmi.",
+          service2T: "MNP Kekal Nombor", service2D: "Penerangan syarat, perkara yang perlu disahkan dan langkah untuk mengurangkan risiko permohonan gagal.",
+          service3T: "Perkhidmatan eSIM", service3D: "Semakan keserasian telefon serta panduan pengaktifan dan pemasangan.",
+          service4T: "Tetapan APN", service4D: "Bantuan tetapan rangkaian untuk Samsung, OPPO, vivo, HONOR, Infinix, TECNO dan lain-lain.",
+          service5T: "Pembaikan Telefon", service5D: "Konsultasi pemeriksaan dan pembaikan skrin, bateri, pengecasan serta masalah biasa.",
+          service6T: "Sokongan WhatsApp", service6D: "Bantuan dalam Bahasa Melayu, English dan 中文 untuk langkah seterusnya.",
+          processTitle: "Empat langkah permohonan yang jelas", processText: "Laman ini menyediakan konsultasi dan panduan; pengesahan identiti, pendaftaran SIM dan pengaktifan dilakukan melalui proses rasmi yang dibenarkan.",
+          step1Title: "Pilih perkhidmatan", step1Text: "Pilih nombor baharu, MNP, eSIM atau perkhidmatan lain yang diperlukan.",
+          step2Title: "Rujuk melalui WhatsApp", step2Text: "Sahkan pelan, kelayakan, dokumen yang diperlukan dan langkah seterusnya.",
+          step3Title: "Pengesahan identiti rasmi", step3Text: "Lengkapkan pengesahan dokumen asal dan pendaftaran melalui saluran Tune Talk yang dibenarkan.",
+          step4Title: "Aktif & dapatkan sokongan", step4Text: "Selepas pengaktifan, kami terus membantu dengan APN dan tetapan penggunaan.",
+          whyTitle: "Jelas, pantas dan ada susulan", whyText: "Kami mengutamakan komunikasi telus dan memastikan pengesahan SIM kekal dalam proses rasmi yang dibenarkan.",
+          why1T: "Konsultasi seluruh Malaysia", why1D: "Dapatkan bantuan pelan dan permohonan melalui WhatsApp tanpa batas lokasi.",
+          why2T: "Komunikasi tiga bahasa", why2D: "Sokongan dalam Bahasa Melayu, English dan 中文.",
+          why3T: "Proses pendaftaran selamat", why3D: "Pengesahan identiti dan pengaktifan melalui sistem Tune Talk yang dibenarkan.",
+          why4T: "Sokongan selepas jualan", why4D: "Panduan jelas untuk APN, rangkaian dan tetapan telefon.",
+          faqTitle: "Soalan lazim sebelum memohon", faqText: "Fahami proses asas, kemudian hubungi WhatsApp untuk pelan terkini dan situasi khusus.",
+          faq1Q: "Bolehkah saya kekalkan nombor sekarang?", faq1A: "Ya, anda boleh memohon MNP. Status nombor, butiran pemilik dan arahan balasan daripada telco asal perlu disahkan.",
+          faq2Q: "Bolehkah saya muat naik MyKad di laman ini?", faq2A: "Tidak digalakkan. Pengesahan dokumen asal dan pendaftaran SIM perlu dilakukan melalui sistem atau saluran rasmi Tune Talk.",
+          faq3Q: "Bagaimana untuk semak sokongan eSIM?", faq3A: "Hantar jenama dan model penuh telefon melalui WhatsApp. Kami akan membantu menyemak keserasian dahulu.",
+          faq4Q: "Apa perlu dibuat jika SIM tiada internet?", faq4A: "Mulakan semula telefon dan periksa data mudah alih. Jika masih gagal, kami boleh membantu menyemak tetapan APN melalui WhatsApp.",
+          contactTitle: "Bersedia untuk memohon?", contactText: "Beritahu kami jika anda perlukan nombor baharu, MNP, eSIM, tetapan rangkaian atau pembaikan telefon.", contactCta: "WhatsApp kami sekarang →",
+          safetyTitle: "Peringatan keselamatan pendaftaran", safetyText: "Jangan hantar gambar MyKad melalui borang web biasa. Pendaftaran SIM dan pengesahan identiti mesti dilakukan melalui proses rasmi Tune Talk."
+        },
+        en: {
+          notice: "Nationwide online support · SIM registration is completed through authorised Tune Talk channels",
+          navHome: "Home", navPlans: "Plans", navServices: "Services", navProcess: "How It Works", navWhy: "Why Us", navContact: "Contact",
+          quick1: "New number application", quick2: "Keep your number", quick3: "Setup & assistance", quick4: "Nationwide support",
+          plansTitle: "Choose the plan that fits you", plansText: "Plan details may change with official promotions. Confirm the latest information with us on WhatsApp before applying.",
+          p35a: "High-speed 4G / 5G data", p35b: "Call and hotspot options", p35c: "Application and setup support",
+          p50a: "Higher data options", p50b: "For high-data users", p50c: "Roaming and latest promotion check",
+          mnpA: "Keep your existing mobile number", mnpB: "Clear application guidance", mnpC: "Registration via authorised process",
+          p35Cta: "Check EPIK35+", p50Cta: "Check EPIK50+", mnpCta: "Ask about MNP",
+          servicesTitle: "Support from application to everyday use", servicesText: "Online consultation and follow-up support make applying, setup and after-sales help easier.",
+          service1T: "New SIM Application", service1D: "We help you choose a plan and guide you through official identity verification and registration.",
+          service2T: "MNP Keep Your Number", service2D: "Clear guidance on requirements, confirmations and steps to reduce failed applications.",
+          service3T: "eSIM Service", service3D: "Phone compatibility checks plus activation and installation guidance.",
+          service4T: "APN Setup", service4D: "Network setup support for Samsung, OPPO, vivo, HONOR, Infinix, TECNO and more.",
+          service5T: "Phone Repair", service5D: "Inspection and repair consultation for screens, batteries, charging and common phone issues.",
+          service6T: "WhatsApp Support", service6D: "Support in Bahasa Melayu, English and 中文 with a clear next step.",
+          processTitle: "A clear four-step application journey", processText: "This site provides consultation and guidance; identity verification, SIM registration and activation remain within authorised official processes.",
+          step1Title: "Choose a service", step1Text: "Select a new number, MNP, eSIM or another service you need.",
+          step2Title: "Chat on WhatsApp", step2Text: "Confirm plans, eligibility, required documents and the next step.",
+          step3Title: "Official identity verification", step3Text: "Complete original-document verification and registration through an authorised Tune Talk channel.",
+          step4Title: "Activate & get support", step4Text: "After activation, we continue to help with APN and device settings.",
+          whyTitle: "Clear, fast and properly followed up", whyText: "We value transparent communication and keep SIM identity verification within authorised official processes.",
+          why1T: "Nationwide consultation", why1D: "Get plan and application support on WhatsApp wherever you are.",
+          why2T: "Three-language support", why2D: "Support in Bahasa Melayu, English and 中文.",
+          why3T: "Secure registration process", why3D: "Identity verification and activation through authorised Tune Talk systems.",
+          why4T: "After-sales setup support", why4D: "Clear guidance for APN, network and phone settings.",
+          faqTitle: "Frequently asked questions", faqText: "Understand the basics, then contact us on WhatsApp for current plans and your specific situation.",
+          faq1Q: "Can I keep my current phone number?", faq1A: "Yes, you can apply for MNP. Your number status, owner details and any response required by your current telco must be confirmed.",
+          faq2Q: "Can I upload my ID on this website?", faq2A: "That is not recommended. Original-document verification and SIM registration should be completed through an authorised Tune Talk system or channel.",
+          faq3Q: "How do I check if my phone supports eSIM?", faq3A: "Send us the brand and full model on WhatsApp. We will help check compatibility before explaining the application steps.",
+          faq4Q: "What if my SIM has no internet?", faq4A: "Restart the phone and check mobile data first. If the issue continues, we can help check your APN settings on WhatsApp.",
+          contactTitle: "Ready to get started?", contactText: "Tell us if you need a new number, MNP, eSIM, network setup or phone repair, and we will guide your next step.", contactCta: "WhatsApp us now →",
+          safetyTitle: "Registration safety reminder", safetyText: "Do not send ID images through an ordinary web form. SIM registration and identity verification must be completed through an authorised Tune Talk process."
+        },
+        zh: {
+          notice: "全马线上协助 · SIM 注册通过 Tune Talk 官方授权渠道完成",
+          navHome: "首页", navPlans: "配套", navServices: "服务", navProcess: "申请流程", navWhy: "为什么选择我们", navContact: "联系我们",
+          quick1: "新号码申请", quick2: "保留原号码", quick3: "安装与咨询", quick4: "全国线上协助",
+          plansTitle: "选择适合你的配套", plansText: "配套内容可能随官方促销更新，申请前可通过 WhatsApp 向我们确认最新详情。",
+          p35a: "高速 4G / 5G 数据", p35b: "通话与热点配套选择", p35c: "申请与设置协助",
+          p50a: "更高数据用量选择", p50b: "适合重度网络用户", p50c: "漫游与最新优惠咨询",
+          mnpA: "保留现有手机号码", mnpB: "申请步骤清楚说明", mnpC: "通过授权流程完成注册",
+          p35Cta: "查询 EPIK35+", p50Cta: "查询 EPIK50+", mnpCta: "咨询 MNP",
+          servicesTitle: "从申请到使用，都有人协助", servicesText: "线上咨询与后续服务结合，让你更轻松地完成申请、设置和售后处理。",
+          service1T: "新 SIM 申请", service1D: "协助选择配套，并引导你通过正式身份验证及注册流程。",
+          service2T: "MNP 保留号码", service2D: "说明转台条件、确认事项和申请步骤，减少转台失败。",
+          service3T: "eSIM 服务", service3D: "查询手机兼容性，并提供开通和安装指导。",
+          service4T: "APN 设置", service4D: "协助 Samsung、OPPO、vivo、HONOR、Infinix、TECNO 等手机设置网络。",
+          service5T: "手机维修", service5D: "屏幕、电池、充电和一般手机问题检测与维修咨询。",
+          service6T: "WhatsApp 支援", service6D: "中文、Bahasa Melayu 和 English 咨询，快速获得下一步指引。",
+          processTitle: "清楚的四步申请流程", processText: "网站负责咨询与引导；身份验证、SIM 注册和激活保留在官方授权流程内完成。",
+          step1Title: "选择服务", step1Text: "选择新号码、MNP、eSIM 或其他所需服务。",
+          step2Title: "WhatsApp 咨询", step2Text: "确认配套、资格、所需文件和下一步安排。",
+          step3Title: "官方身份验证", step3Text: "通过 Tune Talk 授权渠道完成原件验证及注册。",
+          step4Title: "开通与支援", step4Text: "完成激活后，我们继续提供 APN 与使用设置协助。",
+          whyTitle: "清楚、快速、有人跟进", whyText: "我们重视透明沟通，也把 SIM 身份验证保留在官方授权流程内。",
+          why1T: "全国线上咨询", why1D: "不受地区限制，通过 WhatsApp 获取配套和申请协助。",
+          why2T: "三语沟通", why2D: "支持中文、Bahasa Melayu 与 English。",
+          why3T: "安全注册流程", why3D: "身份验证和激活通过 Tune Talk 授权系统处理。",
+          why4T: "售后设置协助", why4D: "从 APN 到手机网络问题，提供清楚的使用指导。",
+          faqTitle: "申请前常见问题", faqText: "先了解基本流程，再通过 WhatsApp 查询最新配套与个别情况。",
+          faq1Q: "可以保留现有手机号码吗？", faq1A: "可以申请 MNP 保留号码。申请前需确认现有号码状态、个人资料和原电信公司的回复要求。",
+          faq2Q: "可以直接在网站上传身份证吗？", faq2A: "不建议。身份证原件验证和 SIM 注册应通过 Tune Talk 官方授权系统或渠道完成。",
+          faq3Q: "如何知道手机是否支持 eSIM？", faq3A: "把手机品牌和完整型号发送给我们，我们会先协助检查兼容性，再说明申请步骤。",
+          faq4Q: "更换 SIM 后无法上网怎么办？", faq4A: "可先重新启动手机并检查移动数据。若仍无法使用，我们可通过 WhatsApp 协助检查 APN 和网络设置。",
+          contactTitle: "准备好申请了吗？", contactText: "告诉我们你需要新号码、MNP、eSIM、网络设置或手机维修，我们会回复合适的下一步。", contactCta: "立即 WhatsApp 咨询 →",
+          safetyTitle: "注册安全提示", safetyText: "请勿通过普通网页表单发送身份证图片。SIM 注册与身份验证应在 Tune Talk 官方授权流程内完成。"
+        }
+      };
+      const languageSelect = document.querySelector(".language-select");
+      function setLanguage(language) {
+        const selected = copy[language] || copy.bm;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const value = selected[element.dataset.i18n];
+          if (value) element.textContent = value;
+        });
+        document.documentElement.lang = language === "zh" ? "zh-Hans" : language === "bm" ? "ms" : "en";
+        languageSelect.value = language;
+        try { localStorage.setItem("tts-language", language); } catch (_) {}
+      }
+      let savedLanguage = "bm";
+      try { savedLanguage = localStorage.getItem("tts-language") || "bm"; } catch (_) {}
+      languageSelect.addEventListener("change", (event) => setLanguage(event.target.value));
+      setLanguage(savedLanguage);
+
+      document.querySelectorAll(".faq-question").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = button.closest(".faq-item");
+          const open = !item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach((other) => {
+            other.classList.remove("open");
+            other.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+            other.querySelector(".faq-question span:last-child").textContent = "＋";
+          });
+          item.classList.toggle("open", open);
+          button.setAttribute("aria-expanded", String(open));
+          button.querySelector("span:last-child").textContent = open ? "−" : "＋";
+        });
+      });
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
