@@ -104,6 +104,18 @@
       color:var(--red);
       box-shadow:0 3px 10px rgba(0,0,0,.08);
     }
+
+    .mobile-lang-switch{display:none}
+    .mobile-lang-label{
+      font-size:14px;
+      font-weight:900;
+      color:#555;
+    }
+    .mobile-lang-buttons{
+      display:flex;
+      gap:7px;
+    }
+
     .menu-btn{
       display:none;
       border:0;
@@ -586,6 +598,26 @@
         padding:13px 0;
         border-bottom:1px solid #eee;
       }
+
+      .mobile-lang-switch{
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:12px;
+        margin-top:8px;
+        padding:12px 0 5px;
+      }
+      .mobile-lang-buttons{
+        background:#f0f1f3;
+        padding:5px;
+        border-radius:999px;
+      }
+      .mobile-lang-buttons .lang-btn{
+        min-width:48px;
+        padding:8px 10px;
+      }
+
       .plans-grid,.service-grid{grid-template-columns:1fr 1fr}
       .buddy-wrap,.contact-grid,.recommender-wrap{grid-template-columns:1fr}
     }
@@ -595,7 +627,7 @@
       .brand{min-width:135px}
       .brand img{width:185px;height:52px}
       .nav-links{top:70px}
-      .lang-switch{display:none}
+      .nav-right > .lang-switch{display:none}
       .hero{padding-top:12px}
       .slider-shell{width:94%;border-radius:16px}
       .slider{
@@ -632,6 +664,15 @@
         <a href="#contact" data-i18n="nav_contact">联系我们</a>
         <a class="nav-cta" target="_blank"
            href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。">WhatsApp</a>
+
+        <div class="mobile-lang-switch" aria-label="Language selection">
+          <span class="mobile-lang-label">🌐 Language</span>
+          <div class="mobile-lang-buttons">
+            <button class="lang-btn" type="button" data-lang="ms">BM</button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
+            <button class="lang-btn active" type="button" data-lang="zh">中文</button>
+          </div>
+        </div>
       </div>
 
       <div class="lang-switch">
@@ -682,10 +723,10 @@
         <h3>EPIK35+</h3>
         <div class="price">RM35 <small>/ 月</small></div>
         <ul class="plan-list">
-          <li>200GB 5G High Speed</li>
-          <li>Unlimited Hotspot</li>
-          <li>Unlimited Call</li>
-          <li>100K PA Insurance</li>
+          <li data-i18n="p35_f1">200GB 5G High Speed</li>
+          <li data-i18n="p35_f2">Unlimited Hotspot</li>
+          <li data-i18n="p35_f3">Unlimited Call</li>
+          <li data-i18n="p35_f4">100K PA Insurance</li>
         </ul>
         <a class="btn btn-dark" target="_blank"
            href="https://wa.me/60105377777?text=你好，我想申请 EPIK35+。"
@@ -696,12 +737,12 @@
         <h3>EPIK50+</h3>
         <div class="price">RM50 <small>/ 月</small></div>
         <ul class="plan-list">
-          <li>500GB Ultra 5G High Speed</li>
-          <li>500GB Hotspot</li>
-          <li>Unlimited Call</li>
-          <li>Free Roaming 13 Countries</li>
-          <li>Shopee VIP + Foodpanda Pro</li>
-          <li>150K PA Insurance</li>
+          <li data-i18n="p50_f1">500GB Ultra 5G High Speed</li>
+          <li data-i18n="p50_f2">500GB Hotspot</li>
+          <li data-i18n="p50_f3">Unlimited Call</li>
+          <li data-i18n="p50_f4">Free Roaming 13 Countries</li>
+          <li data-i18n="p50_f5">Shopee VIP + Foodpanda Pro</li>
+          <li data-i18n="p50_f6">150K PA Insurance</li>
         </ul>
         <a class="btn btn-white" target="_blank"
            href="https://wa.me/60105377777?text=你好，我想申请 EPIK50+。"
@@ -973,6 +1014,9 @@
   const translations = {
     zh:{
 
+      p35_f1:"200GB 5G 高速数据",p35_f2:"无限热点",p35_f3:"无限通话",p35_f4:"RM100,000 个人意外保险",
+      p50_f1:"500GB Ultra 5G 高速数据",p50_f2:"500GB 热点",p50_f3:"无限通话",p50_f4:"13 个国家免费漫游",p50_f5:"Shopee VIP + Foodpanda Pro",p50_f6:"RM150,000 个人意外保险",
+
       nav_apn:"APN 教学",
       apn_title:"TuneTalk APN 设置教学",
       apn_intro:"手机无法使用移动数据时，请根据手机品牌进入 APN 页面并建立新的 APN。",
@@ -1008,6 +1052,9 @@
     },
     en:{
 
+      p35_f1:"200GB 5G High Speed",p35_f2:"Unlimited Hotspot",p35_f3:"Unlimited Calls",p35_f4:"RM100,000 PA Insurance",
+      p50_f1:"500GB Ultra 5G High Speed",p50_f2:"500GB Hotspot",p50_f3:"Unlimited Calls",p50_f4:"Free Roaming in 13 Countries",p50_f5:"Shopee VIP + Foodpanda Pro",p50_f6:"RM150,000 PA Insurance",
+
       nav_apn:"APN Guide",
       apn_title:"TuneTalk APN Setup Guide",
       apn_intro:"If mobile data is not working, follow your phone brand's steps and create a new APN.",
@@ -1042,6 +1089,9 @@
       footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
     },
     ms:{
+
+      p35_f1:"200GB Internet 5G Berkelajuan Tinggi",p35_f2:"Hotspot Tanpa Had",p35_f3:"Panggilan Tanpa Had",p35_f4:"Insurans Kemalangan Diri RM100,000",
+      p50_f1:"500GB Internet Ultra 5G Berkelajuan Tinggi",p50_f2:"Hotspot 500GB",p50_f3:"Panggilan Tanpa Had",p50_f4:"Perayauan Percuma di 13 Negara",p50_f5:"Shopee VIP + Foodpanda Pro",p50_f6:"Insurans Kemalangan Diri RM150,000",
 
       nav_apn:"Panduan APN",
       apn_title:"Panduan Tetapan APN TuneTalk",
@@ -1097,7 +1147,13 @@
   }
 
   document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    btn.addEventListener("click", () => {
+      setLanguage(btn.dataset.lang);
+      const mobileMenu = document.getElementById("navLinks");
+      if(btn.closest(".mobile-lang-switch") && mobileMenu){
+        mobileMenu.classList.remove("open");
+      }
+    });
   });
 
   setLanguage(currentLanguage);
