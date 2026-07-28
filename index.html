@@ -214,7 +214,7 @@
     .quick-item strong{display:block;font-size:17px}
     .quick-item span{font-size:13px;color:#777}
 
-    section{padding:76px 0}
+    section{padding:76px 0;scroll-margin-top:86px}
     .section-heading{text-align:center;margin-bottom:40px}
     .section-heading .tag{
       color:var(--red);
@@ -476,7 +476,7 @@
     @media(max-width:700px){
       .nav-wrap{min-height:70px}
       .brand{min-width:135px}
-      .brand img{width:150px;height:48px}
+      .brand img{width:185px;height:52px}
       .nav-links{top:70px}
       .lang-switch{display:none}
       .hero{padding-top:12px}
@@ -530,10 +530,10 @@
 <header class="hero" id="home">
   <div class="slider-shell">
     <div class="slider" id="slider">
-      <div class="slide active"><img src="images/epik35.png" alt="EPIK35+ Banner"></div>
-      <div class="slide"><img src="images/epik50.png" alt="EPIK50+ Banner"></div>
-      <div class="slide"><img src="images/mnp.png" alt="MNP Banner"></div>
-      <div class="slide"><img src="images/esim.png" alt="eSIM Banner"></div>
+      <div class="slide active" style="--slide-bg:url('images/epik35.png')"><img src="images/epik35.png" alt="EPIK35+ Banner"></div>
+      <div class="slide" style="--slide-bg:url('images/epik50.png')"><img src="images/epik50.png" alt="EPIK50+ Banner"></div>
+      <div class="slide" style="--slide-bg:url('images/mnp.png')"><img src="images/mnp.png" alt="MNP Banner"></div>
+      <div class="slide" style="--slide-bg:url('images/esim.png')"><img src="images/esim.png" alt="eSIM Banner"></div>
 
       <button class="slider-arrow prev" id="prevBtn" aria-label="上一张">‹</button>
       <button class="slider-arrow next" id="nextBtn" aria-label="下一张">›</button>
@@ -607,24 +607,6 @@
   </div>
 </section>
 
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-heading reveal">
-      <div class="tag">SIM Services</div>
-      <h2 data-i18n="services_title">专业 SIM 服务</h2>
-      <p data-i18n="services_desc">专注 TuneTalk SIM、MNP、eSIM、APN 和配套咨询。</p>
-    </div>
-
-    <div class="service-grid">
-      <article class="service-card reveal"><div class="service-icon">📱</div><h3 data-i18n="s1_title">新 SIM 申请</h3><p data-i18n="s1_desc">提供新号码与配套咨询。</p></article>
-      <article class="service-card reveal"><div class="service-icon">🔄</div><h3 data-i18n="s2_title">MNP 转台</h3><p data-i18n="s2_desc">协助保留原号码转换至 TuneTalk。</p></article>
-      <article class="service-card reveal"><div class="service-icon">📶</div><h3 data-i18n="s3_title">eSIM 开通</h3><p data-i18n="s3_desc">兼容性检查、QR Code 激活与安装指导。</p></article>
-      <article class="service-card reveal"><div class="service-icon">⚙️</div><h3 data-i18n="s4_title">APN 设置</h3><p data-i18n="s4_desc">协助常见 Android 与 iPhone 网络设置。</p></article>
-      <article class="service-card reveal"><div class="service-icon">🎁</div><h3 data-i18n="s5_title">最新优惠</h3><p data-i18n="s5_desc">查看最新配套、会员及漫游福利。</p></article>
-      <article class="service-card reveal"><div class="service-icon">💬</div><h3 data-i18n="s6_title">WhatsApp 支援</h3><p data-i18n="s6_desc">快速询问配套、转台、eSIM 与网络问题。</p></article>
-    </div>
-  </div>
-</section>
 
 
 <section id="recommend">
@@ -669,6 +651,25 @@
       <a class="btn btn-red" target="_blank"
          href="https://wa.me/60105377777?text=你好 TT Buddy，我想了解 TuneTalk 配套。"
          data-i18n="buddy_cta">找 TT Buddy 咨询</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">SIM Services</div>
+      <h2 data-i18n="services_title">专业 SIM 服务</h2>
+      <p data-i18n="services_desc">专注 TuneTalk SIM、MNP、eSIM、APN 和配套咨询。</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card reveal"><div class="service-icon">📱</div><h3 data-i18n="s1_title">新 SIM 申请</h3><p data-i18n="s1_desc">提供新号码与配套咨询。</p></article>
+      <article class="service-card reveal"><div class="service-icon">🔄</div><h3 data-i18n="s2_title">MNP 转台</h3><p data-i18n="s2_desc">协助保留原号码转换至 TuneTalk。</p></article>
+      <article class="service-card reveal"><div class="service-icon">📶</div><h3 data-i18n="s3_title">eSIM 开通</h3><p data-i18n="s3_desc">兼容性检查、QR Code 激活与安装指导。</p></article>
+      <article class="service-card reveal"><div class="service-icon">⚙️</div><h3 data-i18n="s4_title">APN 设置</h3><p data-i18n="s4_desc">协助常见 Android 与 iPhone 网络设置。</p></article>
+      <article class="service-card reveal"><div class="service-icon">🎁</div><h3 data-i18n="s5_title">最新优惠</h3><p data-i18n="s5_desc">查看最新配套、会员及漫游福利。</p></article>
+      <article class="service-card reveal"><div class="service-icon">💬</div><h3 data-i18n="s6_title">WhatsApp 支援</h3><p data-i18n="s6_desc">快速询问配套、转台、eSIM 与网络问题。</p></article>
     </div>
   </div>
 </section>
