@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TuneTalk Service V5.0 | SIM, MNP & eSIM</title>
-  <meta name="description" content="TuneTalk Service 提供 EPIK35+、EPIK50+、新 SIM、MNP 保留原号码、eSIM、APN 设置与全国线上协助。">
+  <meta name="description" content="TuneTalk Service 提供 TuneTalk 配套、MNP、eSIM 与三语 APN 设置教学。">
 
   <style>
     :root{
@@ -305,6 +305,123 @@
     .service-card h3{font-size:21px;color:#ff4a51;margin-bottom:6px}
     .service-card p{color:#c8c8c8}
 
+
+    /* APN Guide */
+    .apn-guide{
+      background:linear-gradient(180deg,#f7f7f9,#ffffff);
+    }
+    .apn-layout{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:26px;
+      align-items:start;
+    }
+    .apn-settings-card,
+    .phone-guide{
+      background:#fff;
+      border:1px solid #e9e9ed;
+      border-radius:22px;
+      box-shadow:var(--shadow);
+    }
+    .apn-settings-card{
+      position:sticky;
+      top:100px;
+      overflow:hidden;
+    }
+    .apn-card-head{
+      padding:24px;
+      color:#fff;
+      background:linear-gradient(135deg,#111,#2e0004);
+    }
+    .apn-card-head .apn-icon{font-size:38px;margin-bottom:8px}
+    .apn-card-head h3{font-size:26px}
+    .apn-card-head p{color:#d7d7d7;margin-top:4px}
+    .apn-data{padding:8px 24px 20px}
+    .apn-row{
+      display:grid;
+      grid-template-columns:120px 1fr;
+      gap:18px;
+      align-items:center;
+      padding:17px 0;
+      border-bottom:1px solid #ececf0;
+    }
+    .apn-row:last-child{border-bottom:0}
+    .apn-label{font-weight:900;color:#28282c}
+    .apn-value{
+      font-weight:900;
+      color:var(--red);
+      word-break:break-word;
+    }
+    .apn-value.blank{color:#8b8b92;font-weight:700}
+    .apn-note{
+      margin:0 24px 24px;
+      padding:14px 16px;
+      border-radius:13px;
+      background:#fff4d8;
+      color:#594400;
+      font-weight:700;
+    }
+    .apn-tested{
+      margin:0 24px 24px;
+      padding:13px 16px;
+      border-radius:13px;
+      background:#eaf9ef;
+      color:#11662d;
+      font-weight:800;
+    }
+    .phone-guides{
+      display:grid;
+      gap:14px;
+    }
+    .phone-guide{overflow:hidden}
+    .phone-guide summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:15px;
+      padding:19px 21px;
+      font-size:19px;
+      font-weight:900;
+      user-select:none;
+    }
+    .phone-guide summary::-webkit-details-marker{display:none}
+    .phone-guide summary::after{
+      content:"+";
+      width:34px;height:34px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:#111;color:#fff;
+      font-size:22px;
+      flex:0 0 auto;
+      transition:.25s;
+    }
+    .phone-guide[open] summary::after{content:"−";background:var(--red)}
+    .phone-guide[open] summary{color:var(--red)}
+    .phone-steps{
+      padding:0 21px 22px;
+      border-top:1px solid #eee;
+    }
+    .phone-steps ol{padding:18px 0 0 22px}
+    .phone-steps li{margin:10px 0}
+    .phone-steps strong{color:#111}
+    .apn-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+    @media(max-width:850px){
+      .apn-layout{grid-template-columns:1fr}
+      .apn-settings-card{position:static}
+    }
+    @media(max-width:520px){
+      .apn-row{grid-template-columns:100px 1fr}
+      .apn-card-head,.apn-data{padding-left:18px;padding-right:18px}
+      .apn-note,.apn-tested{margin-left:18px;margin-right:18px}
+    }
+
     /* Buddy only */
     .buddy-section{
       background:linear-gradient(135deg,#fff,#f4f4f6);
@@ -509,6 +626,7 @@
         <a href="#home" data-i18n="nav_home">首页</a>
         <a href="#plans" data-i18n="nav_plans">配套</a>
         <a href="#services" data-i18n="nav_services">SIM 服务</a>
+        <a href="#apn" data-i18n="nav_apn">APN 教学</a>
         <a href="#recommend" data-i18n="nav_recommend">配套推荐</a>
         <a href="#buddy" data-i18n="nav_buddy">TT Buddy</a>
         <a href="#contact" data-i18n="nav_contact">联系我们</a>
@@ -667,12 +785,140 @@
       <article class="service-card reveal"><div class="service-icon">📱</div><h3 data-i18n="s1_title">新 SIM 申请</h3><p data-i18n="s1_desc">提供新号码与配套咨询。</p></article>
       <article class="service-card reveal"><div class="service-icon">🔄</div><h3 data-i18n="s2_title">MNP 转台</h3><p data-i18n="s2_desc">协助保留原号码转换至 TuneTalk。</p></article>
       <article class="service-card reveal"><div class="service-icon">📶</div><h3 data-i18n="s3_title">eSIM 开通</h3><p data-i18n="s3_desc">兼容性检查、QR Code 激活与安装指导。</p></article>
-      <article class="service-card reveal"><div class="service-icon">⚙️</div><h3 data-i18n="s4_title">APN 设置</h3><p data-i18n="s4_desc">协助常见 Android 与 iPhone 网络设置。</p></article>
+      <a class="service-card reveal" href="#apn" style="color:inherit"><div class="service-icon">⚙️</div><h3 data-i18n="s4_title">APN 设置</h3><p data-i18n="s4_desc">协助常见 Android 与 iPhone 网络设置。</p></a>
       <article class="service-card reveal"><div class="service-icon">🎁</div><h3 data-i18n="s5_title">最新优惠</h3><p data-i18n="s5_desc">查看最新配套、会员及漫游福利。</p></article>
       <article class="service-card reveal"><div class="service-icon">💬</div><h3 data-i18n="s6_title">WhatsApp 支援</h3><p data-i18n="s6_desc">快速询问配套、转台、eSIM 与网络问题。</p></article>
     </div>
   </div>
 </section>
+
+
+<section class="apn-guide" id="apn">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">APN GUIDE</div>
+      <h2 data-i18n="apn_title">TuneTalk APN 设置教学</h2>
+      <p data-i18n="apn_intro">手机无法使用移动数据时，请根据手机品牌进入 APN 页面并建立新的 APN。</p>
+    </div>
+
+    <div class="apn-layout">
+      <div class="apn-settings-card reveal">
+        <div class="apn-card-head">
+          <div class="apn-icon">📶</div>
+          <h3>TuneTalk APN</h3>
+          <p data-i18n="apn_copy">请按照以下内容填写。</p>
+        </div>
+
+        <div class="apn-data">
+          <div class="apn-row">
+            <div class="apn-label">Name</div>
+            <div class="apn-value">TuneTalk</div>
+          </div>
+          <div class="apn-row">
+            <div class="apn-label">APN</div>
+            <div class="apn-value">tunetalk</div>
+          </div>
+          <div class="apn-row">
+            <div class="apn-label">Username</div>
+            <div class="apn-value blank">—</div>
+          </div>
+          <div class="apn-row">
+            <div class="apn-label">Password</div>
+            <div class="apn-value blank">—</div>
+          </div>
+        </div>
+
+        <div class="apn-note" data-i18n="apn_default">
+          ⚠️ Username、Password 留空，其他设置保持默认，无需修改。
+        </div>
+        <div class="apn-tested" data-i18n="apn_tested">
+          ✅ 此设置已实机测试，可正常连接移动网络。
+        </div>
+      </div>
+
+      <div>
+        <div class="phone-guides reveal">
+          <details class="phone-guide" open>
+            <summary>Samsung</summary>
+            <div class="phone-steps">
+              <ol>
+                <li data-i18n="sam_1">打开 <strong>Settings（设置）</strong>。</li>
+                <li data-i18n="sam_2">进入 <strong>Connections</strong>。</li>
+                <li data-i18n="sam_3">选择 <strong>Mobile networks</strong>。</li>
+                <li data-i18n="sam_4">点击 <strong>Access Point Names</strong>。</li>
+                <li data-i18n="sam_5">点击右上角 <strong>Add</strong>，按照左边资料填写。</li>
+                <li data-i18n="save_restart">保存并选择 TuneTalk APN，然后关闭再开启移动数据。</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="phone-guide">
+            <summary>OPPO / realme</summary>
+            <div class="phone-steps">
+              <ol>
+                <li data-i18n="oppo_1">打开 <strong>Settings（设置）</strong>。</li>
+                <li data-i18n="oppo_2">进入 <strong>Mobile network</strong>。</li>
+                <li data-i18n="oppo_3">选择正在使用的 TuneTalk SIM。</li>
+                <li data-i18n="oppo_4">点击 <strong>Access point names</strong>。</li>
+                <li data-i18n="oppo_5">点击右上角的 <strong>+</strong>，按照左边资料填写。</li>
+                <li data-i18n="save_restart">保存并选择 TuneTalk APN，然后关闭再开启移动数据。</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="phone-guide">
+            <summary>vivo / iQOO</summary>
+            <div class="phone-steps">
+              <ol>
+                <li data-i18n="vivo_1">打开 <strong>Settings（设置）</strong>。</li>
+                <li data-i18n="vivo_2">进入 <strong>Mobile network</strong>。</li>
+                <li data-i18n="vivo_3">选择 TuneTalk SIM。</li>
+                <li data-i18n="vivo_4">点击 <strong>Access point name (APN)</strong>。</li>
+                <li data-i18n="vivo_5">建立新的 APN，并按照左边资料填写。</li>
+                <li data-i18n="save_restart">保存并选择 TuneTalk APN，然后关闭再开启移动数据。</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="phone-guide">
+            <summary>HONOR / HUAWEI</summary>
+            <div class="phone-steps">
+              <ol>
+                <li data-i18n="honor_1">打开 <strong>Settings（设置）</strong>。</li>
+                <li data-i18n="honor_2">进入 <strong>Mobile network</strong>。</li>
+                <li data-i18n="honor_3">选择 <strong>Mobile data</strong>。</li>
+                <li data-i18n="honor_4">点击 <strong>Access Point Names (APNs)</strong>。</li>
+                <li data-i18n="honor_5">点击 <strong>+</strong> 建立 APN，并按照左边资料填写。</li>
+                <li data-i18n="save_restart">保存并选择 TuneTalk APN，然后关闭再开启移动数据。</li>
+              </ol>
+            </div>
+          </details>
+
+          <details class="phone-guide">
+            <summary>iPhone</summary>
+            <div class="phone-steps">
+              <ol>
+                <li data-i18n="iphone_1">打开 <strong>Settings（设置）</strong>。</li>
+                <li data-i18n="iphone_2">进入 <strong>Mobile Service / Cellular</strong>。</li>
+                <li data-i18n="iphone_3">点击 <strong>Mobile Data Network</strong>。</li>
+                <li data-i18n="iphone_4">在 Mobile Data 的 APN 输入 <strong>tunetalk</strong>。</li>
+                <li data-i18n="iphone_5">返回上一页，然后关闭再开启移动数据。</li>
+              </ol>
+            </div>
+          </details>
+        </div>
+
+        <div class="apn-actions reveal">
+          <a class="btn btn-red" target="_blank"
+             href="https://wa.me/60105377777?text=你好，我需要 TuneTalk APN 设置帮助。"
+             data-i18n="apn_help">APN 还是不能上网？WhatsApp 求助</a>
+          <a class="btn btn-dark" href="#services" data-i18n="back_services">返回 SIM 服务</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="contact" id="contact">
   <div class="container">
@@ -726,6 +972,20 @@
 <script>
   const translations = {
     zh:{
+
+      nav_apn:"APN 教学",
+      apn_title:"TuneTalk APN 设置教学",
+      apn_intro:"手机无法使用移动数据时，请根据手机品牌进入 APN 页面并建立新的 APN。",
+      apn_copy:"请按照以下内容填写。",
+      apn_default:"⚠️ Username、Password 留空，其他设置保持默认，无需修改。",
+      apn_tested:"✅ 此设置已实机测试，可正常连接移动网络。",
+      sam_1:"打开 Settings（设置）。",sam_2:"进入 Connections。",sam_3:"选择 Mobile networks。",sam_4:"点击 Access Point Names。",sam_5:"点击右上角 Add，按照左边资料填写。",
+      oppo_1:"打开 Settings（设置）。",oppo_2:"进入 Mobile network。",oppo_3:"选择正在使用的 TuneTalk SIM。",oppo_4:"点击 Access point names。",oppo_5:"点击右上角的 +，按照左边资料填写。",
+      vivo_1:"打开 Settings（设置）。",vivo_2:"进入 Mobile network。",vivo_3:"选择 TuneTalk SIM。",vivo_4:"点击 Access point name (APN)。",vivo_5:"建立新的 APN，并按照左边资料填写。",
+      honor_1:"打开 Settings（设置）。",honor_2:"进入 Mobile network。",honor_3:"选择 Mobile data。",honor_4:"点击 Access Point Names (APNs)。",honor_5:"点击 + 建立 APN，并按照左边资料填写。",
+      iphone_1:"打开 Settings（设置）。",iphone_2:"进入 Mobile Service / Cellular。",iphone_3:"点击 Mobile Data Network。",iphone_4:"在 Mobile Data 的 APN 输入 tunetalk。",iphone_5:"返回上一页，然后关闭再开启移动数据。",
+      save_restart:"保存并选择 TuneTalk APN，然后关闭再开启移动数据。",
+      apn_help:"APN 还是不能上网？WhatsApp 求助",back_services:"返回 SIM 服务",
       nav_recommend:"配套推荐",recommend_title:"让 TT Buddy 推荐配套",recommend_desc:"回答几个简单问题，立即获得建议。",your_needs:"你的需求",budget:"每月预算",hotspot:"是否经常使用 Hotspot？",travel:"是否经常出国？",keep:"是否要保留原号码？",show_result:"查看推荐",ready_title:"准备好了吗？",ready_desc:"选择你的需求，然后点击查看推荐。",
       nav_home:"首页",nav_plans:"配套",nav_services:"SIM 服务",nav_buddy:"TT Buddy",nav_contact:"联系我们",
       quick_mnp:"保留原号码",quick_esim:"快速开通",
@@ -747,6 +1007,20 @@
       footer_note:"本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。"
     },
     en:{
+
+      nav_apn:"APN Guide",
+      apn_title:"TuneTalk APN Setup Guide",
+      apn_intro:"If mobile data is not working, follow your phone brand's steps and create a new APN.",
+      apn_copy:"Enter the settings exactly as shown below.",
+      apn_default:"⚠️ Leave Username and Password blank. Keep all other settings at their default values.",
+      apn_tested:"✅ This setup has been tested on a real device and can connect to mobile data.",
+      sam_1:"Open Settings.",sam_2:"Go to Connections.",sam_3:"Select Mobile networks.",sam_4:"Tap Access Point Names.",sam_5:"Tap Add at the top-right and enter the settings shown on the left.",
+      oppo_1:"Open Settings.",oppo_2:"Go to Mobile network.",oppo_3:"Select the TuneTalk SIM in use.",oppo_4:"Tap Access point names.",oppo_5:"Tap + at the top-right and enter the settings shown on the left.",
+      vivo_1:"Open Settings.",vivo_2:"Go to Mobile network.",vivo_3:"Select the TuneTalk SIM.",vivo_4:"Tap Access point name (APN).",vivo_5:"Create a new APN and enter the settings shown on the left.",
+      honor_1:"Open Settings.",honor_2:"Go to Mobile network.",honor_3:"Select Mobile data.",honor_4:"Tap Access Point Names (APNs).",honor_5:"Tap + to create an APN and enter the settings shown on the left.",
+      iphone_1:"Open Settings.",iphone_2:"Go to Mobile Service / Cellular.",iphone_3:"Tap Mobile Data Network.",iphone_4:"Under Mobile Data, enter tunetalk in the APN field.",iphone_5:"Go back, then turn mobile data off and on again.",
+      save_restart:"Save and select the TuneTalk APN, then turn mobile data off and on again.",
+      apn_help:"Still offline? Get help on WhatsApp",back_services:"Back to SIM Services",
       nav_recommend:"Plan Finder",recommend_title:"Let TT Buddy Recommend a Plan",recommend_desc:"Answer a few simple questions and get a recommendation.",your_needs:"Your Needs",budget:"Monthly Budget",hotspot:"Do you often use hotspot?",travel:"Do you travel often?",keep:"Do you want to keep your number?",show_result:"Show Recommendation",ready_title:"Ready?",ready_desc:"Choose your needs, then click the button.",
       nav_home:"Home",nav_plans:"Plans",nav_services:"SIM Services",nav_buddy:"TT Buddy",nav_contact:"Contact",
       quick_mnp:"Keep Your Number",quick_esim:"Fast Activation",
@@ -768,6 +1042,20 @@
       footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
     },
     ms:{
+
+      nav_apn:"Panduan APN",
+      apn_title:"Panduan Tetapan APN TuneTalk",
+      apn_intro:"Jika data mudah alih tidak berfungsi, ikuti langkah mengikut jenama telefon dan cipta APN baharu.",
+      apn_copy:"Masukkan tetapan tepat seperti di bawah.",
+      apn_default:"⚠️ Kosongkan Username dan Password. Biarkan semua tetapan lain pada nilai lalai.",
+      apn_tested:"✅ Tetapan ini telah diuji pada peranti sebenar dan boleh menyambung ke data mudah alih.",
+      sam_1:"Buka Settings.",sam_2:"Masuk ke Connections.",sam_3:"Pilih Mobile networks.",sam_4:"Tekan Access Point Names.",sam_5:"Tekan Add di bahagian kanan atas dan masukkan tetapan di sebelah kiri.",
+      oppo_1:"Buka Settings.",oppo_2:"Masuk ke Mobile network.",oppo_3:"Pilih SIM TuneTalk yang sedang digunakan.",oppo_4:"Tekan Access point names.",oppo_5:"Tekan + di bahagian kanan atas dan masukkan tetapan di sebelah kiri.",
+      vivo_1:"Buka Settings.",vivo_2:"Masuk ke Mobile network.",vivo_3:"Pilih SIM TuneTalk.",vivo_4:"Tekan Access point name (APN).",vivo_5:"Cipta APN baharu dan masukkan tetapan di sebelah kiri.",
+      honor_1:"Buka Settings.",honor_2:"Masuk ke Mobile network.",honor_3:"Pilih Mobile data.",honor_4:"Tekan Access Point Names (APNs).",honor_5:"Tekan + untuk mencipta APN dan masukkan tetapan di sebelah kiri.",
+      iphone_1:"Buka Settings.",iphone_2:"Masuk ke Mobile Service / Cellular.",iphone_3:"Tekan Mobile Data Network.",iphone_4:"Di bahagian Mobile Data, masukkan tunetalk pada ruangan APN.",iphone_5:"Kembali ke halaman sebelumnya, kemudian tutup dan hidupkan semula data mudah alih.",
+      save_restart:"Simpan dan pilih APN TuneTalk, kemudian tutup dan hidupkan semula data mudah alih.",
+      apn_help:"Masih tiada internet? Dapatkan bantuan WhatsApp",back_services:"Kembali ke Servis SIM",
       nav_recommend:"Cadangan Pelan",recommend_title:"Biar TT Buddy Cadangkan Pelan",recommend_desc:"Jawab beberapa soalan mudah untuk mendapatkan cadangan.",your_needs:"Keperluan Anda",budget:"Bajet Bulanan",hotspot:"Kerap guna hotspot?",travel:"Kerap ke luar negara?",keep:"Mahu kekalkan nombor?",show_result:"Lihat Cadangan",ready_title:"Sudah Bersedia?",ready_desc:"Pilih keperluan anda dan tekan butang.",
       nav_home:"Utama",nav_plans:"Pelan",nav_services:"Servis SIM",nav_buddy:"TT Buddy",nav_contact:"Hubungi Kami",
       quick_mnp:"Kekalkan Nombor",quick_esim:"Aktivasi Pantas",
