@@ -738,9 +738,9 @@
       <div class="quiz reveal">
         <h3 data-i18n="your_needs">你的需求</h3>
         <div class="field"><label data-i18n="budget">每月预算</label><select id="budget"><option value="35">RM35</option><option value="50">RM50</option></select></div>
-        <div class="field"><label data-i18n="hotspot">是否经常使用 Hotspot？</label><select id="hotspot"><option value="yes">是</option><option value="no">否</option></select></div>
-        <div class="field"><label data-i18n="travel">是否经常出国？</label><select id="travel"><option value="yes">是</option><option value="no">否</option></select></div>
-        <div class="field"><label data-i18n="keep">是否要保留原号码？</label><select id="keep"><option value="yes">是</option><option value="no">否</option></select></div>
+        <div class="field"><label data-i18n="hotspot">是否经常使用 Hotspot？</label><select id="hotspot"><option value="yes" data-i18n="yes">是</option><option value="no" data-i18n="no">否</option></select></div>
+        <div class="field"><label data-i18n="travel">是否经常出国？</label><select id="travel"><option value="yes" data-i18n="yes">是</option><option value="no" data-i18n="no">否</option></select></div>
+        <div class="field"><label data-i18n="keep">是否要保留原号码？</label><select id="keep"><option value="yes" data-i18n="yes">是</option><option value="no" data-i18n="no">否</option></select></div>
         <button class="btn btn-red" id="recommendBtn" data-i18n="show_result">查看推荐</button>
       </div>
       <div class="recommendation reveal"><h3>TT Buddy</h3><div class="result-box" id="resultBox"><div><h4 data-i18n="ready_title">准备好了吗？</h4><p data-i18n="ready_desc">选择你的需求，然后点击查看推荐。</p></div></div></div>
@@ -986,7 +986,7 @@
       iphone_1:"打开 Settings（设置）。",iphone_2:"进入 Mobile Service / Cellular。",iphone_3:"点击 Mobile Data Network。",iphone_4:"在 Mobile Data 的 APN 输入 tunetalk。",iphone_5:"返回上一页，然后关闭再开启移动数据。",
       save_restart:"保存并选择 TuneTalk APN，然后关闭再开启移动数据。",
       apn_help:"APN 还是不能上网？WhatsApp 求助",back_services:"返回 SIM 服务",
-      nav_recommend:"配套推荐",recommend_title:"让 TT Buddy 推荐配套",recommend_desc:"回答几个简单问题，立即获得建议。",your_needs:"你的需求",budget:"每月预算",hotspot:"是否经常使用 Hotspot？",travel:"是否经常出国？",keep:"是否要保留原号码？",show_result:"查看推荐",ready_title:"准备好了吗？",ready_desc:"选择你的需求，然后点击查看推荐。",
+      nav_recommend:"配套推荐",recommend_title:"让 TT Buddy 推荐配套",recommend_desc:"回答几个简单问题，立即获得建议。",your_needs:"你的需求",budget:"每月预算",hotspot:"是否经常使用 Hotspot？",travel:"是否经常出国？",keep:"是否要保留原号码？",show_result:"查看推荐",ready_title:"准备好了吗？",ready_desc:"选择你的需求，然后点击查看推荐。",yes:"是",no:"否",result35:"适合日常上网，并包含无限通话与热点。",result50:"更适合大量数据、热点和国际漫游需求。",mnp_reason:"可通过 MNP 保留原号码。",whatsapp_result:"WhatsApp 申请",wa_recommend:"TT Buddy 推荐我申请",
       nav_home:"首页",nav_plans:"配套",nav_services:"SIM 服务",nav_buddy:"TT Buddy",nav_contact:"联系我们",
       quick_mnp:"保留原号码",quick_esim:"快速开通",
       plans_title:"热门 TuneTalk 配套",plans_desc:"选择适合你的配套，也可以直接通过 WhatsApp 询问。",
@@ -1021,7 +1021,7 @@
       iphone_1:"Open Settings.",iphone_2:"Go to Mobile Service / Cellular.",iphone_3:"Tap Mobile Data Network.",iphone_4:"Under Mobile Data, enter tunetalk in the APN field.",iphone_5:"Go back, then turn mobile data off and on again.",
       save_restart:"Save and select the TuneTalk APN, then turn mobile data off and on again.",
       apn_help:"Still offline? Get help on WhatsApp",back_services:"Back to SIM Services",
-      nav_recommend:"Plan Finder",recommend_title:"Let TT Buddy Recommend a Plan",recommend_desc:"Answer a few simple questions and get a recommendation.",your_needs:"Your Needs",budget:"Monthly Budget",hotspot:"Do you often use hotspot?",travel:"Do you travel often?",keep:"Do you want to keep your number?",show_result:"Show Recommendation",ready_title:"Ready?",ready_desc:"Choose your needs, then click the button.",
+      nav_recommend:"Plan Finder",recommend_title:"Let TT Buddy Recommend a Plan",recommend_desc:"Answer a few simple questions and get a recommendation.",your_needs:"Your Needs",budget:"Monthly Budget",hotspot:"Do you often use hotspot?",travel:"Do you travel often?",keep:"Do you want to keep your number?",show_result:"Show Recommendation",ready_title:"Ready?",ready_desc:"Choose your needs, then click the button.",yes:"Yes",no:"No",result35:"Suitable for everyday use with unlimited calls and hotspot.",result50:"Better for heavy data use, hotspot and international roaming.",mnp_reason:"You can keep your existing number through MNP.",whatsapp_result:"Apply on WhatsApp",wa_recommend:"TT Buddy recommended that I apply for",
       nav_home:"Home",nav_plans:"Plans",nav_services:"SIM Services",nav_buddy:"TT Buddy",nav_contact:"Contact",
       quick_mnp:"Keep Your Number",quick_esim:"Fast Activation",
       plans_title:"Popular TuneTalk Plans",plans_desc:"Choose a suitable plan or ask us directly on WhatsApp.",
@@ -1056,7 +1056,7 @@
       iphone_1:"Buka Settings.",iphone_2:"Masuk ke Mobile Service / Cellular.",iphone_3:"Tekan Mobile Data Network.",iphone_4:"Di bahagian Mobile Data, masukkan tunetalk pada ruangan APN.",iphone_5:"Kembali ke halaman sebelumnya, kemudian tutup dan hidupkan semula data mudah alih.",
       save_restart:"Simpan dan pilih APN TuneTalk, kemudian tutup dan hidupkan semula data mudah alih.",
       apn_help:"Masih tiada internet? Dapatkan bantuan WhatsApp",back_services:"Kembali ke Servis SIM",
-      nav_recommend:"Cadangan Pelan",recommend_title:"Biar TT Buddy Cadangkan Pelan",recommend_desc:"Jawab beberapa soalan mudah untuk mendapatkan cadangan.",your_needs:"Keperluan Anda",budget:"Bajet Bulanan",hotspot:"Kerap guna hotspot?",travel:"Kerap ke luar negara?",keep:"Mahu kekalkan nombor?",show_result:"Lihat Cadangan",ready_title:"Sudah Bersedia?",ready_desc:"Pilih keperluan anda dan tekan butang.",
+      nav_recommend:"Cadangan Pelan",recommend_title:"Biar TT Buddy Cadangkan Pelan",recommend_desc:"Jawab beberapa soalan mudah untuk mendapatkan cadangan.",your_needs:"Keperluan Anda",budget:"Bajet Bulanan",hotspot:"Kerap guna hotspot?",travel:"Kerap ke luar negara?",keep:"Mahu kekalkan nombor?",show_result:"Lihat Cadangan",ready_title:"Sudah Bersedia?",ready_desc:"Pilih keperluan anda dan tekan butang.",yes:"Ya",no:"Tidak",result35:"Sesuai untuk kegunaan harian dengan panggilan dan hotspot tanpa had.",result50:"Lebih sesuai untuk penggunaan data tinggi, hotspot dan perayauan antarabangsa.",mnp_reason:"Anda boleh mengekalkan nombor sedia ada melalui MNP.",whatsapp_result:"Mohon melalui WhatsApp",wa_recommend:"TT Buddy mencadangkan saya memohon",
       nav_home:"Utama",nav_plans:"Pelan",nav_services:"Servis SIM",nav_buddy:"TT Buddy",nav_contact:"Hubungi Kami",
       quick_mnp:"Kekalkan Nombor",quick_esim:"Aktivasi Pantas",
       plans_title:"Pelan TuneTalk Popular",plans_desc:"Pilih pelan yang sesuai atau tanya kami terus melalui WhatsApp.",
@@ -1078,24 +1078,29 @@
     }
   };
 
+  let currentLanguage = localStorage.getItem("tt-language") || "zh";
+  let lastRecommendation = null;
+
   function setLanguage(lang){
-    const dict = translations[lang] || translations.zh;
-    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+    currentLanguage = translations[lang] ? lang : "zh";
+    const dict = translations[currentLanguage];
+    document.documentElement.lang = currentLanguage === "zh" ? "zh-CN" : currentLanguage;
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const key = el.dataset.i18n;
       if(dict[key]) el.textContent = dict[key];
     });
     document.querySelectorAll(".lang-btn").forEach(btn => {
-      btn.classList.toggle("active", btn.dataset.lang === lang);
+      btn.classList.toggle("active", btn.dataset.lang === currentLanguage);
     });
-    localStorage.setItem("tt-language", lang);
+    localStorage.setItem("tt-language", currentLanguage);
+    if(lastRecommendation) renderRecommendation(lastRecommendation);
   }
 
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
 
-  setLanguage(localStorage.getItem("tt-language") || "zh");
+  setLanguage(currentLanguage);
 
   const menuBtn = document.getElementById("menuBtn");
   const navLinks = document.getElementById("navLinks");
@@ -1143,19 +1148,35 @@
   restart();
 
 
+  function renderRecommendation(data){
+    const dict = translations[currentLanguage] || translations.zh;
+    let reason = data.plan === "EPIK50+" ? dict.result50 : dict.result35;
+    if(data.keep === "yes") reason += " " + dict.mnp_reason;
+
+    const whatsappMessage = `${dict.wa_recommend} ${data.plan}`;
+    document.getElementById("resultBox").innerHTML = `
+      <div>
+        <h4>${data.plan}</h4>
+        <p>${reason}</p>
+        <a class="btn btn-white" target="_blank"
+           href="https://wa.me/60105377777?text=${encodeURIComponent(whatsappMessage)}">
+          ${dict.whatsapp_result}
+        </a>
+      </div>`;
+  }
+
   document.getElementById("recommendBtn").addEventListener("click", () => {
-    const budget=document.getElementById("budget").value;
-    const hotspot=document.getElementById("hotspot").value;
-    const travel=document.getElementById("travel").value;
-    const keep=document.getElementById("keep").value;
-    let plan="EPIK35+";
-    let reason="适合日常上网，并包含无限通话与热点。";
-    if(budget==="50" || hotspot==="yes" || travel==="yes"){
-      plan="EPIK50+";
-      reason="更适合大量数据、热点和国际漫游需求。";
-    }
-    if(keep==="yes") reason += " 可通过 MNP 保留原号码。";
-    document.getElementById("resultBox").innerHTML=`<div><h4>${plan}</h4><p>${reason}</p><a class="btn btn-white" target="_blank" href="https://wa.me/60105377777?text=TT%20Buddy%20推荐我申请%20${encodeURIComponent(plan)}">WhatsApp</a></div>`;
+    const budget = document.getElementById("budget").value;
+    const hotspot = document.getElementById("hotspot").value;
+    const travel = document.getElementById("travel").value;
+    const keep = document.getElementById("keep").value;
+
+    const plan = (budget === "50" || hotspot === "yes" || travel === "yes")
+      ? "EPIK50+"
+      : "EPIK35+";
+
+    lastRecommendation = {plan, keep};
+    renderRecommendation(lastRecommendation);
   });
 
   const observer = new IntersectionObserver(entries=>{
