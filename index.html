@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuneTalk Service | SIM, MNP & eSIM</title>
+  <title>TuneTalk Service V5.0 | SIM, MNP & eSIM</title>
   <meta name="description" content="TuneTalk Service 提供 EPIK35+、EPIK50+、新 SIM、MNP 保留原号码、eSIM、APN 设置与全国线上协助。">
 
   <style>
@@ -132,8 +132,8 @@
     .slider{
       position:relative;
       width:100%;
-      aspect-ratio:1792/800;
-      max-height:510px;
+      aspect-ratio:1920/850;
+      max-height:500px;
       min-height:260px;
       overflow:hidden;
       background:#fff;
@@ -373,6 +373,16 @@
       font-weight:800;
     }
 
+
+    /* SMART PLAN FINDER */
+    .recommender-wrap{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .quiz,.recommendation{background:#fff;border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+    .quiz h3,.recommendation h3{font-size:28px;margin-bottom:16px}
+    .field{margin:15px 0}.field label{display:block;font-weight:800;margin-bottom:7px}
+    .field select{width:100%;padding:13px;border:1px solid #ddd;border-radius:10px;background:#fff}
+    .result-box{min-height:260px;border-radius:17px;background:linear-gradient(135deg,#d4000a,#111);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:26px}
+    .result-box h4{font-size:32px;margin-bottom:8px}.result-box p{color:#f4f4f4;margin-bottom:17px}
+
     /* Contact */
     .contact{
       background:linear-gradient(135deg,#eceef2,#fff);
@@ -460,7 +470,7 @@
         border-bottom:1px solid #eee;
       }
       .plans-grid,.service-grid{grid-template-columns:1fr 1fr}
-      .buddy-wrap,.contact-grid{grid-template-columns:1fr}
+      .buddy-wrap,.contact-grid,.recommender-wrap{grid-template-columns:1fr}
     }
 
     @media(max-width:700px){
@@ -472,7 +482,7 @@
       .hero{padding-top:12px}
       .slider-shell{width:94%;border-radius:16px}
       .slider{
-        aspect-ratio:1792/800;
+        aspect-ratio:1920/850;
         min-height:0;
       }
       .slider-arrow{width:36px;height:36px}
@@ -499,6 +509,7 @@
         <a href="#home" data-i18n="nav_home">首页</a>
         <a href="#plans" data-i18n="nav_plans">配套</a>
         <a href="#services" data-i18n="nav_services">SIM 服务</a>
+        <a href="#recommend" data-i18n="nav_recommend">配套推荐</a>
         <a href="#buddy" data-i18n="nav_buddy">TT Buddy</a>
         <a href="#contact" data-i18n="nav_contact">联系我们</a>
         <a class="nav-cta" target="_blank"
@@ -615,6 +626,28 @@
   </div>
 </section>
 
+
+<section id="recommend">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">Smart Plan Finder</div>
+      <h2 data-i18n="recommend_title">让 TT Buddy 推荐配套</h2>
+      <p data-i18n="recommend_desc">回答几个简单问题，立即获得建议。</p>
+    </div>
+    <div class="recommender-wrap">
+      <div class="quiz reveal">
+        <h3 data-i18n="your_needs">你的需求</h3>
+        <div class="field"><label data-i18n="budget">每月预算</label><select id="budget"><option value="35">RM35</option><option value="50">RM50</option></select></div>
+        <div class="field"><label data-i18n="hotspot">是否经常使用 Hotspot？</label><select id="hotspot"><option value="yes">是</option><option value="no">否</option></select></div>
+        <div class="field"><label data-i18n="travel">是否经常出国？</label><select id="travel"><option value="yes">是</option><option value="no">否</option></select></div>
+        <div class="field"><label data-i18n="keep">是否要保留原号码？</label><select id="keep"><option value="yes">是</option><option value="no">否</option></select></div>
+        <button class="btn btn-red" id="recommendBtn" data-i18n="show_result">查看推荐</button>
+      </div>
+      <div class="recommendation reveal"><h3>TT Buddy</h3><div class="result-box" id="resultBox"><div><h4 data-i18n="ready_title">准备好了吗？</h4><p data-i18n="ready_desc">选择你的需求，然后点击查看推荐。</p></div></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="buddy-section" id="buddy">
   <div class="container buddy-wrap">
     <div class="buddy-figure reveal">
@@ -692,6 +725,7 @@
 <script>
   const translations = {
     zh:{
+      nav_recommend:"配套推荐",recommend_title:"让 TT Buddy 推荐配套",recommend_desc:"回答几个简单问题，立即获得建议。",your_needs:"你的需求",budget:"每月预算",hotspot:"是否经常使用 Hotspot？",travel:"是否经常出国？",keep:"是否要保留原号码？",show_result:"查看推荐",ready_title:"准备好了吗？",ready_desc:"选择你的需求，然后点击查看推荐。",
       nav_home:"首页",nav_plans:"配套",nav_services:"SIM 服务",nav_buddy:"TT Buddy",nav_contact:"联系我们",
       quick_mnp:"保留原号码",quick_esim:"快速开通",
       plans_title:"热门 TuneTalk 配套",plans_desc:"选择适合你的配套，也可以直接通过 WhatsApp 询问。",
@@ -712,6 +746,7 @@
       footer_note:"本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。"
     },
     en:{
+      nav_recommend:"Plan Finder",recommend_title:"Let TT Buddy Recommend a Plan",recommend_desc:"Answer a few simple questions and get a recommendation.",your_needs:"Your Needs",budget:"Monthly Budget",hotspot:"Do you often use hotspot?",travel:"Do you travel often?",keep:"Do you want to keep your number?",show_result:"Show Recommendation",ready_title:"Ready?",ready_desc:"Choose your needs, then click the button.",
       nav_home:"Home",nav_plans:"Plans",nav_services:"SIM Services",nav_buddy:"TT Buddy",nav_contact:"Contact",
       quick_mnp:"Keep Your Number",quick_esim:"Fast Activation",
       plans_title:"Popular TuneTalk Plans",plans_desc:"Choose a suitable plan or ask us directly on WhatsApp.",
@@ -732,6 +767,7 @@
       footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
     },
     ms:{
+      nav_recommend:"Cadangan Pelan",recommend_title:"Biar TT Buddy Cadangkan Pelan",recommend_desc:"Jawab beberapa soalan mudah untuk mendapatkan cadangan.",your_needs:"Keperluan Anda",budget:"Bajet Bulanan",hotspot:"Kerap guna hotspot?",travel:"Kerap ke luar negara?",keep:"Mahu kekalkan nombor?",show_result:"Lihat Cadangan",ready_title:"Sudah Bersedia?",ready_desc:"Pilih keperluan anda dan tekan butang.",
       nav_home:"Utama",nav_plans:"Pelan",nav_services:"Servis SIM",nav_buddy:"TT Buddy",nav_contact:"Hubungi Kami",
       quick_mnp:"Kekalkan Nombor",quick_esim:"Aktivasi Pantas",
       plans_title:"Pelan TuneTalk Popular",plans_desc:"Pilih pelan yang sesuai atau tanya kami terus melalui WhatsApp.",
@@ -816,6 +852,22 @@
   },{passive:true});
 
   restart();
+
+
+  document.getElementById("recommendBtn").addEventListener("click", () => {
+    const budget=document.getElementById("budget").value;
+    const hotspot=document.getElementById("hotspot").value;
+    const travel=document.getElementById("travel").value;
+    const keep=document.getElementById("keep").value;
+    let plan="EPIK35+";
+    let reason="适合日常上网，并包含无限通话与热点。";
+    if(budget==="50" || hotspot==="yes" || travel==="yes"){
+      plan="EPIK50+";
+      reason="更适合大量数据、热点和国际漫游需求。";
+    }
+    if(keep==="yes") reason += " 可通过 MNP 保留原号码。";
+    document.getElementById("resultBox").innerHTML=`<div><h4>${plan}</h4><p>${reason}</p><a class="btn btn-white" target="_blank" href="https://wa.me/60105377777?text=TT%20Buddy%20推荐我申请%20${encodeURIComponent(plan)}">WhatsApp</a></div>`;
+  });
 
   const observer = new IntersectionObserver(entries=>{
     entries.forEach(entry=>{
