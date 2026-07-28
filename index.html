@@ -3,39 +3,827 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuneTalk Service | Nationwide SIM, MNP & eSIM</title>
+  <title>TuneTalk Service | SIM, MNP & eSIM</title>
   <meta name="description" content="TuneTalk Service 提供 EPIK35+、EPIK50+、新 SIM、MNP 保留原号码、eSIM、APN 设置与全国线上协助。">
+
   <style>
-    :root{--red:#ef1018;--black:#0a0a0a;--white:#fff;--light:#f6f7f9;--gray:#6d6d6d;--green:#25d366;--shadow:0 18px 50px rgba(0,0,0,.14)}
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:var(--light);color:#222;line-height:1.6;overflow-x:hidden}img{display:block;max-width:100%}a{text-decoration:none}.container{width:min(1180px,92%);margin:auto}
-    .navbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #ececec}.nav-wrap{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;min-width:220px}.brand img{width:220px;height:62px;object-fit:contain;object-position:left center}.nav-links{display:flex;align-items:center;gap:23px}.nav-links a{color:#181818;font-size:14px;font-weight:800}.nav-links a:hover{color:var(--red)}.nav-cta{background:var(--red);color:#fff!important;padding:11px 17px;border-radius:999px}.menu-btn{display:none;border:0;background:#111;color:#fff;width:46px;height:46px;border-radius:12px;font-size:25px;cursor:pointer}
-    .slider{position:relative;width:100%;aspect-ratio:1792/800;min-height:300px;background:#fff;overflow:hidden}.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .8s ease;background:#fff}.slide.active{opacity:1;visibility:visible;z-index:2}.slide img{width:100%;height:100%;object-fit:contain;object-position:center;background:#fff}.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(0,0,0,.42);color:#fff;font-size:27px;cursor:pointer}.prev{left:18px}.next{right:18px}.dots{position:absolute;z-index:10;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:9px}.dot{width:10px;height:10px;border-radius:999px;border:0;background:rgba(0,0,0,.3);cursor:pointer}.dot.active{width:30px;background:var(--red)}
-    .quick-bar{width:min(1080px,92%);margin:24px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.quick-item{background:#fff;border-radius:16px;padding:20px 15px;box-shadow:var(--shadow);text-align:center;color:#222}.quick-item strong{display:block;font-size:18px}.quick-item span{font-size:13px;color:#777}
-    section{padding:82px 0}.section-heading{text-align:center;margin-bottom:42px}.tag{color:var(--red);font-size:13px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.section-heading h2{font-size:clamp(30px,4vw,46px);margin:6px 0 10px}.section-heading p{color:var(--gray);max-width:720px;margin:auto}
-    .plans-grid,.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.plan-card{background:#fff;border-radius:22px;padding:30px;box-shadow:var(--shadow)}.plan-card.featured{background:linear-gradient(150deg,#111,#360006);color:#fff;border:2px solid var(--red)}.plan-card h3{font-size:30px;color:var(--red)}.price{font-size:49px;font-weight:900;line-height:1.1;margin:14px 0}.price small{font-size:14px;color:#777}.featured .price small{color:#ccc}.plan-list{list-style:none;margin:22px 0}.plan-list li{position:relative;padding-left:25px;margin:11px 0}.plan-list li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:10px;font-weight:900}.btn-dark{background:#111;color:#fff}.btn-red{background:var(--red);color:#fff}.btn-white{background:#fff;color:var(--red)}
-    .services{background:#0d0d0d;color:#fff}.services .section-heading p{color:#bbb}.service-card{background:#191919;border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:28px}.service-icon{font-size:40px;margin-bottom:12px}.service-card h3{font-size:22px;color:#ff4a51;margin-bottom:7px}.service-card p{color:#c8c8c8}
-    .buddy-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center}.buddy-image{background:#111;border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}.buddy-copy{background:#fff;border-radius:24px;padding:36px;box-shadow:var(--shadow)}.buddy-copy h2{font-size:clamp(32px,4vw,48px);margin-bottom:14px}.buddy-copy p{color:var(--gray);margin-bottom:18px}.buddy-points{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin:22px 0 28px}.buddy-point{background:#f7f7f7;border-radius:13px;padding:14px;font-weight:800}
-    .contact{background:linear-gradient(135deg,#eceef2,#fff)}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}.contact-card,.map-card{background:#fff;border-radius:22px;padding:32px;box-shadow:var(--shadow)}.contact-row{display:flex;gap:12px;align-items:flex-start;margin:16px 0}.map-box{min-height:330px;border-radius:16px;background:linear-gradient(135deg,#d4000a,#111);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px}
-    footer{background:#080808;color:#aaa;text-align:center;padding:34px 0}footer strong{color:#fff}.disclaimer{font-size:12px;color:#777;margin-top:12px}.floating-wa{position:fixed;right:18px;bottom:18px;z-index:1200;background:var(--green);color:#fff;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 14px 30px rgba(0,0,0,.28)}
-    @media(max-width:980px){.menu-btn{display:block}.nav-links{position:absolute;top:82px;left:0;width:100%;display:none;flex-direction:column;align-items:flex-start;gap:0;background:#fff;padding:10px 4%;box-shadow:0 15px 35px rgba(0,0,0,.1)}.nav-links.open{display:flex}.nav-links a{width:100%;padding:13px 0;border-bottom:1px solid #eee}.plans-grid,.service-grid{grid-template-columns:1fr 1fr}.buddy-wrap,.contact-grid{grid-template-columns:1fr}}
-    @media(max-width:700px){.nav-wrap{min-height:72px}.brand{min-width:150px}.brand img{width:160px;height:52px}.nav-links{top:72px}.slider{aspect-ratio:1792/800;min-height:0}.slider-arrow{width:40px;height:40px}.quick-bar{grid-template-columns:repeat(2,1fr)}.plans-grid,.service-grid{grid-template-columns:1fr}.buddy-points{grid-template-columns:1fr}section{padding:66px 0}}
+    :root{
+      --red:#ef1018;
+      --red-dark:#9e0007;
+      --black:#0b0b0b;
+      --white:#fff;
+      --soft:#f5f6f8;
+      --gray:#6f737a;
+      --green:#25d366;
+      --shadow:0 18px 50px rgba(0,0,0,.13);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--soft);
+      color:#222;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%}
+    a{text-decoration:none}
+    button{font:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+
+    /* Header */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid #ececec;
+    }
+    .nav-wrap{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      min-width:210px;
+    }
+    .brand img{
+      width:205px;
+      height:56px;
+      object-fit:contain;
+      object-position:left center;
+    }
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:18px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:20px;
+    }
+    .nav-links a{
+      color:#171717;
+      font-size:14px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .nav-links a:hover{color:var(--red)}
+    .nav-cta{
+      background:var(--red);
+      color:#fff!important;
+      padding:10px 16px;
+      border-radius:999px;
+      box-shadow:0 8px 20px rgba(239,16,24,.22);
+    }
+    .lang-switch{
+      display:flex;
+      gap:6px;
+      background:#f0f1f3;
+      padding:5px;
+      border-radius:999px;
+    }
+    .lang-btn{
+      border:0;
+      background:transparent;
+      padding:7px 10px;
+      border-radius:999px;
+      font-weight:800;
+      cursor:pointer;
+      color:#555;
+    }
+    .lang-btn.active{
+      background:#fff;
+      color:var(--red);
+      box-shadow:0 3px 10px rgba(0,0,0,.08);
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:#111;
+      color:#fff;
+      width:44px;
+      height:44px;
+      border-radius:12px;
+      font-size:24px;
+      cursor:pointer;
+    }
+
+    /* Smaller hero */
+    .hero{
+      padding:24px 0 0;
+      background:#fff;
+    }
+    .slider-shell{
+      width:min(1180px,92%);
+      margin:auto;
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+    .slider{
+      position:relative;
+      width:100%;
+      aspect-ratio:1792/800;
+      max-height:510px;
+      min-height:260px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .slide{
+      position:absolute;
+      inset:0;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .7s ease;
+      background:#fff;
+    }
+    .slide.active{
+      opacity:1;
+      visibility:visible;
+      z-index:2;
+    }
+    .slide img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+      background:#fff;
+    }
+    .slider-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:10;
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      border:1px solid rgba(255,255,255,.55);
+      background:rgba(0,0,0,.38);
+      color:#fff;
+      font-size:24px;
+      cursor:pointer;
+    }
+    .prev{left:14px}
+    .next{right:14px}
+    .dots{
+      position:absolute;
+      z-index:10;
+      left:50%;
+      bottom:12px;
+      transform:translateX(-50%);
+      display:flex;
+      gap:8px;
+    }
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      border:0;
+      background:rgba(0,0,0,.25);
+      cursor:pointer;
+      transition:.2s;
+    }
+    .dot.active{width:28px;background:var(--red)}
+
+    .quick-bar{
+      width:min(1080px,92%);
+      margin:22px auto 0;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+    .quick-item{
+      background:#fff;
+      border-radius:16px;
+      padding:18px 14px;
+      box-shadow:var(--shadow);
+      text-align:center;
+      color:#222;
+      transition:.25s;
+    }
+    .quick-item:hover{transform:translateY(-4px)}
+    .quick-item strong{display:block;font-size:17px}
+    .quick-item span{font-size:13px;color:#777}
+
+    section{padding:76px 0}
+    .section-heading{text-align:center;margin-bottom:40px}
+    .section-heading .tag{
+      color:var(--red);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .section-heading h2{
+      font-size:clamp(30px,4vw,45px);
+      margin:6px 0 9px;
+    }
+    .section-heading p{
+      color:var(--gray);
+      max-width:720px;
+      margin:auto;
+    }
+
+    /* Plans */
+    .plans-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .plan-card{
+      background:#fff;
+      border-radius:22px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      transition:.25s;
+    }
+    .plan-card:hover{transform:translateY(-7px)}
+    .plan-card.featured{
+      background:linear-gradient(150deg,#111,#360006);
+      color:#fff;
+      border:2px solid var(--red);
+    }
+    .plan-card h3{font-size:30px;color:var(--red)}
+    .price{font-size:48px;font-weight:900;line-height:1.1;margin:13px 0}
+    .price small{font-size:14px;color:#777}
+    .featured .price small{color:#ccc}
+    .plan-list{list-style:none;margin:20px 0}
+    .plan-list li{position:relative;padding-left:24px;margin:10px 0}
+    .plan-list li::before{
+      content:"✓";
+      position:absolute;
+      left:0;
+      color:var(--red);
+      font-weight:900;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:13px 19px;
+      border-radius:10px;
+      font-weight:900;
+      transition:.25s;
+    }
+    .btn:hover{transform:translateY(-3px)}
+    .btn-dark{background:#111;color:#fff}
+    .btn-red{background:var(--red);color:#fff}
+    .btn-white{background:#fff;color:var(--red)}
+
+    /* Services */
+    .services{
+      background:#0d0d0d;
+      color:#fff;
+    }
+    .services .section-heading p{color:#bbb}
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .service-card{
+      background:#191919;
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:18px;
+      padding:26px;
+      transition:.25s;
+    }
+    .service-card:hover{
+      transform:translateY(-5px);
+      border-color:rgba(239,16,24,.5);
+    }
+    .service-icon{font-size:38px;margin-bottom:10px}
+    .service-card h3{font-size:21px;color:#ff4a51;margin-bottom:6px}
+    .service-card p{color:#c8c8c8}
+
+    /* Buddy only */
+    .buddy-section{
+      background:linear-gradient(135deg,#fff,#f4f4f6);
+    }
+    .buddy-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:34px;
+      align-items:center;
+    }
+    .buddy-figure{
+      min-height:520px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 50% 70%, rgba(239,16,24,.20), transparent 42%),
+        linear-gradient(180deg,#fff,#f4f4f6);
+    }
+    .buddy-figure::after{
+      content:"";
+      position:absolute;
+      bottom:32px;
+      width:62%;
+      height:36px;
+      border-radius:50%;
+      background:rgba(0,0,0,.14);
+      filter:blur(14px);
+    }
+    .buddy-figure img{
+      position:relative;
+      z-index:2;
+      max-height:500px;
+      width:auto;
+      object-fit:contain;
+      animation:buddyFloat 3.4s ease-in-out infinite;
+    }
+    @keyframes buddyFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-10px)}
+    }
+    .buddy-copy{
+      background:#fff;
+      border-radius:24px;
+      padding:36px;
+      box-shadow:var(--shadow);
+    }
+    .buddy-copy h2{
+      font-size:clamp(32px,4vw,47px);
+      margin-bottom:13px;
+    }
+    .buddy-copy p{color:var(--gray);margin-bottom:18px}
+    .buddy-points{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin:20px 0 26px;
+    }
+    .buddy-point{
+      background:#f6f6f7;
+      border-radius:12px;
+      padding:13px;
+      font-weight:800;
+    }
+
+    /* Contact */
+    .contact{
+      background:linear-gradient(135deg,#eceef2,#fff);
+    }
+    .contact-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:26px;
+    }
+    .contact-card,.support-card{
+      background:#fff;
+      border-radius:22px;
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .contact-card h3,.support-card h3{font-size:28px;margin-bottom:14px}
+    .contact-row{
+      display:flex;
+      gap:12px;
+      margin:15px 0;
+      align-items:flex-start;
+    }
+    .contact-row span{font-size:22px}
+    .support-box{
+      min-height:300px;
+      border-radius:16px;
+      background:linear-gradient(135deg,#d4000a,#111);
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:25px;
+    }
+
+    footer{
+      background:#080808;
+      color:#aaa;
+      text-align:center;
+      padding:32px 0;
+    }
+    footer strong{color:#fff}
+    .disclaimer{font-size:12px;color:#777;margin-top:10px}
+
+    .floating-wa{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      z-index:1200;
+      background:var(--green);
+      color:#fff;
+      padding:13px 17px;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 14px 30px rgba(0,0,0,.28);
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(28px);
+      transition:.6s ease;
+    }
+    .reveal.show{opacity:1;transform:none}
+
+    @media(max-width:1020px){
+      .menu-btn{display:block}
+      .nav-right{gap:10px}
+      .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        width:100%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:0;
+        background:#fff;
+        padding:10px 4%;
+        box-shadow:0 15px 35px rgba(0,0,0,.1);
+      }
+      .nav-links.open{display:flex}
+      .nav-links a{
+        width:100%;
+        padding:13px 0;
+        border-bottom:1px solid #eee;
+      }
+      .plans-grid,.service-grid{grid-template-columns:1fr 1fr}
+      .buddy-wrap,.contact-grid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:700px){
+      .nav-wrap{min-height:70px}
+      .brand{min-width:135px}
+      .brand img{width:150px;height:48px}
+      .nav-links{top:70px}
+      .lang-switch{display:none}
+      .hero{padding-top:12px}
+      .slider-shell{width:94%;border-radius:16px}
+      .slider{
+        aspect-ratio:1792/800;
+        min-height:0;
+      }
+      .slider-arrow{width:36px;height:36px}
+      .quick-bar{grid-template-columns:repeat(2,1fr)}
+      .plans-grid,.service-grid{grid-template-columns:1fr}
+      .buddy-figure{min-height:420px}
+      .buddy-figure img{max-height:390px}
+      .buddy-points{grid-template-columns:1fr}
+      section{padding:62px 0}
+    }
   </style>
 </head>
+
 <body>
-<nav class="navbar"><div class="container nav-wrap"><a href="#home" class="brand"><img src="images/logo.png" alt="TuneTalk Service Logo"></a><button class="menu-btn" id="menuBtn">☰</button><div class="nav-links" id="navLinks"><a href="#home">首页</a><a href="#plans">配套</a><a href="#services">SIM 服务</a><a href="#buddy">TT Buddy</a><a href="#contact">联系我们</a><a class="nav-cta" target="_blank" href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。">WhatsApp</a></div></div></nav>
-<header id="home"><div class="slider" id="slider"><div class="slide active"><img src="images/epik35.png" alt="EPIK35+"></div><div class="slide"><img src="images/epik50.png" alt="EPIK50+"></div><div class="slide"><img src="images/mnp.png" alt="MNP"></div><div class="slide"><img src="images/esim.png" alt="eSIM"></div><button class="slider-arrow prev" id="prevBtn">‹</button><button class="slider-arrow next" id="nextBtn">›</button><div class="dots" id="dots"></div></div></header>
-<div class="quick-bar"><a class="quick-item" href="#plans"><strong>EPIK35+</strong><span>200GB · RM35</span></a><a class="quick-item" href="#plans"><strong>EPIK50+</strong><span>500GB · RM50</span></a><a class="quick-item" href="#services"><strong>MNP</strong><span>保留原号码</span></a><a class="quick-item" href="#services"><strong>eSIM</strong><span>快速开通</span></a></div>
+
+<nav class="navbar">
+  <div class="container nav-wrap">
+    <a href="#home" class="brand">
+      <img src="images/logo.png" alt="TuneTalk Service Logo">
+    </a>
+
+    <div class="nav-right">
+      <div class="nav-links" id="navLinks">
+        <a href="#home" data-i18n="nav_home">首页</a>
+        <a href="#plans" data-i18n="nav_plans">配套</a>
+        <a href="#services" data-i18n="nav_services">SIM 服务</a>
+        <a href="#buddy" data-i18n="nav_buddy">TT Buddy</a>
+        <a href="#contact" data-i18n="nav_contact">联系我们</a>
+        <a class="nav-cta" target="_blank"
+           href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。">WhatsApp</a>
+      </div>
+
+      <div class="lang-switch">
+        <button class="lang-btn" data-lang="ms">BM</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn active" data-lang="zh">中文</button>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="打开菜单">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="slider-shell">
+    <div class="slider" id="slider">
+      <div class="slide active"><img src="images/epik35.png" alt="EPIK35+ Banner"></div>
+      <div class="slide"><img src="images/epik50.png" alt="EPIK50+ Banner"></div>
+      <div class="slide"><img src="images/mnp.png" alt="MNP Banner"></div>
+      <div class="slide"><img src="images/esim.png" alt="eSIM Banner"></div>
+
+      <button class="slider-arrow prev" id="prevBtn" aria-label="上一张">‹</button>
+      <button class="slider-arrow next" id="nextBtn" aria-label="下一张">›</button>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</header>
+
+<div class="quick-bar">
+  <a class="quick-item" href="#plans"><strong>EPIK35+</strong><span>200GB · RM35</span></a>
+  <a class="quick-item" href="#plans"><strong>EPIK50+</strong><span>500GB · RM50</span></a>
+  <a class="quick-item" href="#services"><strong>MNP</strong><span data-i18n="quick_mnp">保留原号码</span></a>
+  <a class="quick-item" href="#services"><strong>eSIM</strong><span data-i18n="quick_esim">快速开通</span></a>
+</div>
+
 <main>
-<section id="plans"><div class="container"><div class="section-heading"><div class="tag">Popular Plans</div><h2>热门 TuneTalk 配套</h2><p>选择适合你的配套，也可以直接通过 WhatsApp 询问。</p></div><div class="plans-grid"><article class="plan-card"><h3>EPIK35+</h3><div class="price">RM35 <small>/ 月</small></div><ul class="plan-list"><li>200GB 5G High Speed</li><li>Unlimited Hotspot</li><li>Unlimited Call</li><li>100K PA Insurance</li><li>4G / 5G Ready</li></ul><a class="btn btn-dark" target="_blank" href="https://wa.me/60105377777?text=你好，我想申请 EPIK35+。">立即申请</a></article><article class="plan-card featured"><h3>EPIK50+</h3><div class="price">RM50 <small>/ 月</small></div><ul class="plan-list"><li>500GB Ultra 5G High Speed</li><li>500GB Hotspot</li><li>Unlimited Call</li><li>Free Roaming 13 Countries</li><li>Shopee VIP + Foodpanda Pro</li><li>150K PA Insurance</li></ul><a class="btn btn-white" target="_blank" href="https://wa.me/60105377777?text=你好，我想申请 EPIK50+。">立即申请</a></article><article class="plan-card"><h3>MNP</h3><div class="price">保留号码</div><ul class="plan-list"><li>保留现有手机号码</li><li>转换至 TuneTalk</li><li>快速申请指导</li><li>全国线上协助</li><li>WhatsApp 直接咨询</li></ul><a class="btn btn-dark" target="_blank" href="https://wa.me/60105377777?text=你好，我想保留原号码转去 TuneTalk。">申请 MNP</a></article></div></div></section>
-<section class="services" id="services"><div class="container"><div class="section-heading"><div class="tag">SIM Services</div><h2>专业 SIM 服务</h2><p>网站专注 TuneTalk SIM、MNP、eSIM、APN 和配套咨询。</p></div><div class="service-grid"><article class="service-card"><div class="service-icon">📱</div><h3>新 SIM 申请</h3><p>提供新号码与配套咨询。</p></article><article class="service-card"><div class="service-icon">🔄</div><h3>MNP 转台</h3><p>协助保留原号码转换至 TuneTalk。</p></article><article class="service-card"><div class="service-icon">📶</div><h3>eSIM 开通</h3><p>兼容性检查、QR Code 激活与安装指导。</p></article><article class="service-card"><div class="service-icon">⚙️</div><h3>APN 设置</h3><p>协助常见手机品牌完成上网设置。</p></article><article class="service-card"><div class="service-icon">🎁</div><h3>最新优惠</h3><p>查看 TuneTalk 最新配套与会员福利。</p></article><article class="service-card"><div class="service-icon">💬</div><h3>WhatsApp 支援</h3><p>快速询问配套、转台、eSIM 和网络问题。</p></article></div></div></section>
-<section id="buddy"><div class="container buddy-wrap"><div class="buddy-image"><img src="images/ttbuddy.png" alt="TT Buddy"></div><div class="buddy-copy"><div class="tag">Meet TT Buddy</div><h2>你的 TuneTalk SIM 顾问</h2><p>TT Buddy 会协助你选择合适配套、了解 MNP、开通 eSIM，并解决常见 SIM 与网络设置问题。</p><div class="buddy-points"><div class="buddy-point">⚡ 快速回复</div><div class="buddy-point">📶 配套建议</div><div class="buddy-point">🔄 MNP 协助</div><div class="buddy-point">🌐 全国线上服务</div></div><a class="btn btn-red" target="_blank" href="https://wa.me/60105377777?text=你好 TT Buddy，我想了解 TuneTalk 配套。">找 TT Buddy 咨询</a></div></div></section>
-<section class="contact" id="contact"><div class="container"><div class="section-heading"><div class="tag">Contact Us</div><h2>联系我们</h2><p>欢迎通过 WhatsApp 咨询。</p></div><div class="contact-grid"><div class="contact-card"><h3>TuneTalk Service</h3><div class="contact-row"><span>📞</span><div><strong>WhatsApp</strong><br>010-5377777</div></div><div class="contact-row"><span>📍</span><div><strong>门市地址</strong><br>No. 49, Jalan Rambai Jaya 2,<br>Taman Rambai Jaya,<br>75250 Melaka, Malaysia</div></div><div class="contact-row"><span>🕐</span><div><strong>营业时间</strong><br>1:00 PM – 10:00 PM</div></div><a class="btn btn-red" target="_blank" href="https://wa.me/60105377777?text=你好，我从网站看到 TuneTalk Service。">WhatsApp 联系</a></div><div class="map-card"><div class="map-box"><div><h3>全国线上服务</h3><p>可通过 WhatsApp 咨询配套、MNP 和 eSIM。</p><br><a class="btn btn-white" target="_blank" href="https://wa.me/60105377777?text=你好，我想了解全国线上 TuneTalk 服务。">立即咨询</a></div></div></div></div></div></section>
+
+<section id="plans">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">Popular Plans</div>
+      <h2 data-i18n="plans_title">热门 TuneTalk 配套</h2>
+      <p data-i18n="plans_desc">选择适合你的配套，也可以直接通过 WhatsApp 询问。</p>
+    </div>
+
+    <div class="plans-grid">
+      <article class="plan-card reveal">
+        <h3>EPIK35+</h3>
+        <div class="price">RM35 <small>/ 月</small></div>
+        <ul class="plan-list">
+          <li>200GB 5G High Speed</li>
+          <li>Unlimited Hotspot</li>
+          <li>Unlimited Call</li>
+          <li>100K PA Insurance</li>
+        </ul>
+        <a class="btn btn-dark" target="_blank"
+           href="https://wa.me/60105377777?text=你好，我想申请 EPIK35+。"
+           data-i18n="apply_now">立即申请</a>
+      </article>
+
+      <article class="plan-card featured reveal">
+        <h3>EPIK50+</h3>
+        <div class="price">RM50 <small>/ 月</small></div>
+        <ul class="plan-list">
+          <li>500GB Ultra 5G High Speed</li>
+          <li>500GB Hotspot</li>
+          <li>Unlimited Call</li>
+          <li>Free Roaming 13 Countries</li>
+          <li>Shopee VIP + Foodpanda Pro</li>
+          <li>150K PA Insurance</li>
+        </ul>
+        <a class="btn btn-white" target="_blank"
+           href="https://wa.me/60105377777?text=你好，我想申请 EPIK50+。"
+           data-i18n="apply_now">立即申请</a>
+      </article>
+
+      <article class="plan-card reveal">
+        <h3>MNP</h3>
+        <div class="price" data-i18n="keep_number">保留号码</div>
+        <ul class="plan-list">
+          <li data-i18n="mnp_1">保留现有手机号码</li>
+          <li data-i18n="mnp_2">转换至 TuneTalk</li>
+          <li data-i18n="mnp_3">快速申请指导</li>
+          <li data-i18n="mnp_4">全国线上协助</li>
+        </ul>
+        <a class="btn btn-dark" target="_blank"
+           href="https://wa.me/60105377777?text=你好，我想保留原号码转去 TuneTalk。"
+           data-i18n="apply_mnp">申请 MNP</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">SIM Services</div>
+      <h2 data-i18n="services_title">专业 SIM 服务</h2>
+      <p data-i18n="services_desc">专注 TuneTalk SIM、MNP、eSIM、APN 和配套咨询。</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card reveal"><div class="service-icon">📱</div><h3 data-i18n="s1_title">新 SIM 申请</h3><p data-i18n="s1_desc">提供新号码与配套咨询。</p></article>
+      <article class="service-card reveal"><div class="service-icon">🔄</div><h3 data-i18n="s2_title">MNP 转台</h3><p data-i18n="s2_desc">协助保留原号码转换至 TuneTalk。</p></article>
+      <article class="service-card reveal"><div class="service-icon">📶</div><h3 data-i18n="s3_title">eSIM 开通</h3><p data-i18n="s3_desc">兼容性检查、QR Code 激活与安装指导。</p></article>
+      <article class="service-card reveal"><div class="service-icon">⚙️</div><h3 data-i18n="s4_title">APN 设置</h3><p data-i18n="s4_desc">协助常见 Android 与 iPhone 网络设置。</p></article>
+      <article class="service-card reveal"><div class="service-icon">🎁</div><h3 data-i18n="s5_title">最新优惠</h3><p data-i18n="s5_desc">查看最新配套、会员及漫游福利。</p></article>
+      <article class="service-card reveal"><div class="service-icon">💬</div><h3 data-i18n="s6_title">WhatsApp 支援</h3><p data-i18n="s6_desc">快速询问配套、转台、eSIM 与网络问题。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="buddy-section" id="buddy">
+  <div class="container buddy-wrap">
+    <div class="buddy-figure reveal">
+      <img src="images/ttbuddy-character.png" alt="TT Buddy 3D Character">
+    </div>
+
+    <div class="buddy-copy reveal">
+      <div class="tag">Meet TT Buddy</div>
+      <h2 data-i18n="buddy_title">你的 TuneTalk SIM 顾问</h2>
+      <p data-i18n="buddy_desc">TT Buddy 会协助你选择配套、了解 MNP、开通 eSIM，并处理常见 SIM 与网络设置问题。</p>
+
+      <div class="buddy-points">
+        <div class="buddy-point" data-i18n="b1">⚡ 快速回复</div>
+        <div class="buddy-point" data-i18n="b2">📶 配套建议</div>
+        <div class="buddy-point" data-i18n="b3">🔄 MNP 协助</div>
+        <div class="buddy-point" data-i18n="b4">🌐 全国线上服务</div>
+      </div>
+
+      <a class="btn btn-red" target="_blank"
+         href="https://wa.me/60105377777?text=你好 TT Buddy，我想了解 TuneTalk 配套。"
+         data-i18n="buddy_cta">找 TT Buddy 咨询</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="tag">Contact Us</div>
+      <h2 data-i18n="contact_title">联系我们</h2>
+      <p data-i18n="contact_desc">欢迎通过 WhatsApp 咨询，或到门市了解。</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>TuneTalk Service</h3>
+        <div class="contact-row"><span>📞</span><div><strong>WhatsApp</strong><br>010-5377777</div></div>
+        <div class="contact-row"><span>📍</span><div><strong data-i18n="store_address">门市地址</strong><br>No. 49, Jalan Rambai Jaya 2,<br>Taman Rambai Jaya,<br>75250 Melaka, Malaysia</div></div>
+        <div class="contact-row"><span>🕐</span><div><strong data-i18n="business_hours">营业时间</strong><br>1:00 PM – 10:00 PM</div></div>
+        <a class="btn btn-red" target="_blank"
+           href="https://wa.me/60105377777?text=你好，我从网站看到 TuneTalk Service。"
+           data-i18n="contact_cta">WhatsApp 联系</a>
+      </div>
+
+      <div class="support-card reveal">
+        <div class="support-box">
+          <div>
+            <h3 data-i18n="nationwide_title">全国线上服务</h3>
+            <p data-i18n="nationwide_desc">可通过 WhatsApp 咨询配套、MNP 和 eSIM。</p><br>
+            <a class="btn btn-white" target="_blank"
+               href="https://wa.me/60105377777?text=你好，我想了解全国线上 TuneTalk 服务。"
+               data-i18n="ask_now">立即咨询</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer><div class="container"><strong>TuneTalk Service</strong><br>Nationwide SIM · MNP · eSIM Support<div class="disclaimer">本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。</div></div></footer>
-<a class="floating-wa" target="_blank" href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 服务。">💬 WhatsApp</a>
+
+<footer>
+  <div class="container">
+    <strong>TuneTalk Service</strong><br>
+    Nationwide SIM · MNP · eSIM Support
+    <div class="disclaimer" data-i18n="footer_note">
+      本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。
+    </div>
+  </div>
+</footer>
+
+<a class="floating-wa" target="_blank"
+   href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 服务。">💬 WhatsApp</a>
+
 <script>
-const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.onclick=()=>navLinks.classList.toggle('open');document.querySelectorAll('.nav-links a').forEach(a=>a.onclick=()=>navLinks.classList.remove('open'));
-const slides=document.querySelectorAll('.slide'),dotsBox=document.getElementById('dots'),prevBtn=document.getElementById('prevBtn'),nextBtn=document.getElementById('nextBtn'),slider=document.getElementById('slider');let current=0,timer,startX=0;slides.forEach((_,i)=>{const d=document.createElement('button');d.className='dot'+(i===0?' active':'');d.onclick=()=>{show(i);restart()};dotsBox.appendChild(d)});const dots=document.querySelectorAll('.dot');function show(i){slides[current].classList.remove('active');dots[current].classList.remove('active');current=(i+slides.length)%slides.length;slides[current].classList.add('active');dots[current].classList.add('active')}function next(){show(current+1)}function prev(){show(current-1)}function restart(){clearInterval(timer);timer=setInterval(next,5000)}nextBtn.onclick=()=>{next();restart()};prevBtn.onclick=()=>{prev();restart()};slider.addEventListener('touchstart',e=>startX=e.changedTouches[0].screenX,{passive:true});slider.addEventListener('touchend',e=>{const diff=e.changedTouches[0].screenX-startX;if(Math.abs(diff)>50){diff<0?next():prev();restart()}},{passive:true});restart();
+  const translations = {
+    zh:{
+      nav_home:"首页",nav_plans:"配套",nav_services:"SIM 服务",nav_buddy:"TT Buddy",nav_contact:"联系我们",
+      quick_mnp:"保留原号码",quick_esim:"快速开通",
+      plans_title:"热门 TuneTalk 配套",plans_desc:"选择适合你的配套，也可以直接通过 WhatsApp 询问。",
+      apply_now:"立即申请",keep_number:"保留号码",
+      mnp_1:"保留现有手机号码",mnp_2:"转换至 TuneTalk",mnp_3:"快速申请指导",mnp_4:"全国线上协助",apply_mnp:"申请 MNP",
+      services_title:"专业 SIM 服务",services_desc:"专注 TuneTalk SIM、MNP、eSIM、APN 和配套咨询。",
+      s1_title:"新 SIM 申请",s1_desc:"提供新号码与配套咨询。",
+      s2_title:"MNP 转台",s2_desc:"协助保留原号码转换至 TuneTalk。",
+      s3_title:"eSIM 开通",s3_desc:"兼容性检查、QR Code 激活与安装指导。",
+      s4_title:"APN 设置",s4_desc:"协助常见 Android 与 iPhone 网络设置。",
+      s5_title:"最新优惠",s5_desc:"查看最新配套、会员及漫游福利。",
+      s6_title:"WhatsApp 支援",s6_desc:"快速询问配套、转台、eSIM 与网络问题。",
+      buddy_title:"你的 TuneTalk SIM 顾问",buddy_desc:"TT Buddy 会协助你选择配套、了解 MNP、开通 eSIM，并处理常见 SIM 与网络设置问题。",
+      b1:"⚡ 快速回复",b2:"📶 配套建议",b3:"🔄 MNP 协助",b4:"🌐 全国线上服务",buddy_cta:"找 TT Buddy 咨询",
+      contact_title:"联系我们",contact_desc:"欢迎通过 WhatsApp 咨询，或到门市了解。",
+      store_address:"门市地址",business_hours:"营业时间",contact_cta:"WhatsApp 联系",
+      nationwide_title:"全国线上服务",nationwide_desc:"可通过 WhatsApp 咨询配套、MNP 和 eSIM。",ask_now:"立即咨询",
+      footer_note:"本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。"
+    },
+    en:{
+      nav_home:"Home",nav_plans:"Plans",nav_services:"SIM Services",nav_buddy:"TT Buddy",nav_contact:"Contact",
+      quick_mnp:"Keep Your Number",quick_esim:"Fast Activation",
+      plans_title:"Popular TuneTalk Plans",plans_desc:"Choose a suitable plan or ask us directly on WhatsApp.",
+      apply_now:"Apply Now",keep_number:"Keep Number",
+      mnp_1:"Keep your existing number",mnp_2:"Switch to TuneTalk",mnp_3:"Fast application guidance",mnp_4:"Nationwide online support",apply_mnp:"Apply for MNP",
+      services_title:"Professional SIM Services",services_desc:"Focused on TuneTalk SIM, MNP, eSIM, APN and plan support.",
+      s1_title:"New SIM Registration",s1_desc:"New number registration and plan consultation.",
+      s2_title:"MNP Switch",s2_desc:"Keep your number and switch to TuneTalk.",
+      s3_title:"eSIM Activation",s3_desc:"Compatibility check, QR activation and setup guidance.",
+      s4_title:"APN Setup",s4_desc:"Network setup support for Android and iPhone.",
+      s5_title:"Latest Promotions",s5_desc:"Explore the latest plan, membership and roaming benefits.",
+      s6_title:"WhatsApp Support",s6_desc:"Quick help for plans, MNP, eSIM and network issues.",
+      buddy_title:"Your TuneTalk SIM Assistant",buddy_desc:"TT Buddy helps you choose plans, understand MNP, activate eSIM and solve common SIM and network setup issues.",
+      b1:"⚡ Fast Replies",b2:"📶 Plan Advice",b3:"🔄 MNP Assistance",b4:"🌐 Nationwide Support",buddy_cta:"Chat with TT Buddy",
+      contact_title:"Contact Us",contact_desc:"Contact us on WhatsApp or visit our store.",
+      store_address:"Store Address",business_hours:"Business Hours",contact_cta:"Contact on WhatsApp",
+      nationwide_title:"Nationwide Online Support",nationwide_desc:"Ask us about plans, MNP and eSIM through WhatsApp.",ask_now:"Ask Now",
+      footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
+    },
+    ms:{
+      nav_home:"Utama",nav_plans:"Pelan",nav_services:"Servis SIM",nav_buddy:"TT Buddy",nav_contact:"Hubungi Kami",
+      quick_mnp:"Kekalkan Nombor",quick_esim:"Aktivasi Pantas",
+      plans_title:"Pelan TuneTalk Popular",plans_desc:"Pilih pelan yang sesuai atau tanya kami terus melalui WhatsApp.",
+      apply_now:"Mohon Sekarang",keep_number:"Kekalkan Nombor",
+      mnp_1:"Kekalkan nombor sedia ada",mnp_2:"Tukar ke TuneTalk",mnp_3:"Panduan permohonan pantas",mnp_4:"Sokongan dalam talian seluruh negara",apply_mnp:"Mohon MNP",
+      services_title:"Servis SIM Profesional",services_desc:"Fokus pada SIM TuneTalk, MNP, eSIM, APN dan khidmat nasihat pelan.",
+      s1_title:"Pendaftaran SIM Baharu",s1_desc:"Pendaftaran nombor baharu dan khidmat nasihat pelan.",
+      s2_title:"Tukar MNP",s2_desc:"Kekalkan nombor dan tukar ke TuneTalk.",
+      s3_title:"Aktivasi eSIM",s3_desc:"Semakan keserasian, aktivasi QR dan panduan pemasangan.",
+      s4_title:"Tetapan APN",s4_desc:"Bantuan tetapan rangkaian Android dan iPhone.",
+      s5_title:"Promosi Terkini",s5_desc:"Lihat manfaat pelan, keahlian dan perayauan terkini.",
+      s6_title:"Sokongan WhatsApp",s6_desc:"Bantuan pantas untuk pelan, MNP, eSIM dan rangkaian.",
+      buddy_title:"Pembantu SIM TuneTalk Anda",buddy_desc:"TT Buddy membantu memilih pelan, memahami MNP, mengaktifkan eSIM dan menyelesaikan isu SIM serta tetapan rangkaian.",
+      b1:"⚡ Balasan Pantas",b2:"📶 Cadangan Pelan",b3:"🔄 Bantuan MNP",b4:"🌐 Sokongan Seluruh Negara",buddy_cta:"Hubungi TT Buddy",
+      contact_title:"Hubungi Kami",contact_desc:"Hubungi melalui WhatsApp atau kunjungi kedai kami.",
+      store_address:"Alamat Kedai",business_hours:"Waktu Operasi",contact_cta:"Hubungi di WhatsApp",
+      nationwide_title:"Sokongan Dalam Talian Seluruh Negara",nationwide_desc:"Tanya kami tentang pelan, MNP dan eSIM melalui WhatsApp.",ask_now:"Tanya Sekarang",
+      footer_note:"Laman ini ialah laman perkhidmatan dan konsultasi bebas. Pelan, liputan, kelayakan, manfaat dan syarat pendaftaran tertakluk kepada terma rasmi terkini Tune Talk."
+    }
+  };
+
+  function setLanguage(lang){
+    const dict = translations[lang] || translations.zh;
+    document.documentElement.lang = lang === "zh" ? "zh-CN" : lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      if(dict[key]) el.textContent = dict[key];
+    });
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+    localStorage.setItem("tt-language", lang);
+  }
+
+  document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+  });
+
+  setLanguage(localStorage.getItem("tt-language") || "zh");
+
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => navLinks.classList.remove("open"));
+  });
+
+  const slides = document.querySelectorAll(".slide");
+  const dotsBox = document.getElementById("dots");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  const slider = document.getElementById("slider");
+  let current = 0, timer, startX = 0;
+
+  slides.forEach((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "dot" + (index === 0 ? " active" : "");
+    dot.addEventListener("click", () => {showSlide(index);restart()});
+    dotsBox.appendChild(dot);
+  });
+
+  const dots = document.querySelectorAll(".dot");
+
+  function showSlide(index){
+    slides[current].classList.remove("active");
+    dots[current].classList.remove("active");
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add("active");
+    dots[current].classList.add("active");
+  }
+  function next(){showSlide(current+1)}
+  function prev(){showSlide(current-1)}
+  function restart(){clearInterval(timer);timer=setInterval(next,5000)}
+
+  nextBtn.addEventListener("click",()=>{next();restart()});
+  prevBtn.addEventListener("click",()=>{prev();restart()});
+
+  slider.addEventListener("touchstart",e=>{startX=e.changedTouches[0].screenX},{passive:true});
+  slider.addEventListener("touchend",e=>{
+    const diff=e.changedTouches[0].screenX-startX;
+    if(Math.abs(diff)>50){diff<0?next():prev();restart()}
+  },{passive:true});
+
+  restart();
+
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting) entry.target.classList.add("show");
+    });
+  },{threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 </script>
+
 </body>
 </html>
