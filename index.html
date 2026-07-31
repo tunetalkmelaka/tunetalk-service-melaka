@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+  <!-- TuneTalk Service V5.4 Final | Updated 2026-07-31 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuneTalk Service V5.3.1 | SIM, MNP & eSIM</title>
+  <title>TuneTalk Service V5.4 Final | SIM, MNP, eSIM, APN & TT Buddy</title>
   <meta name="description" content="TuneTalk Service 提供 TuneTalk 配套、MNP、eSIM 与三语 APN 设置教学。">
 
   <style>
@@ -391,7 +392,7 @@
     .sms-box.compact{margin:10px 0 0}
 
     
-/* V5.3.1 additions */
+/* V5.4 additions */
 .mnp-method-section,.reviews-section{padding:80px 5%;background:#0d0d10}
 .mnp-method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
 .mnp-method-card{position:relative;background:#19191d;border:1px solid #303039;border-radius:22px;padding:24px;min-height:220px}
@@ -409,7 +410,7 @@
 @media(max-width:900px){.mnp-method-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.mnp-method-grid{grid-template-columns:1fr}.mnp-method-reminder,.reviews-summary{flex-direction:column;align-items:flex-start}.reviews-track{grid-auto-columns:88%}}
 
 
-/* V5.3.1.1 clarity and colour improvements */
+/* V5.4.1 clarity and colour improvements */
 .section-heading h2,
 .section-title h2{
   color:#fff !important;
@@ -569,6 +570,138 @@
   .plan-list li{font-size:16px !important}
   .quick-item strong{font-size:17px !important}
   .buddy-messages{height:280px}
+}
+
+
+/* V5.4 readability polish */
+body{
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.quick-item{
+  min-height:118px;
+  padding:22px 20px !important;
+}
+.quick-item strong{
+  display:block;
+  font-size:21px !important;
+  line-height:1.25;
+  font-weight:950 !important;
+}
+.quick-item span{
+  display:block;
+  margin-top:8px;
+  font-size:16px !important;
+  line-height:1.45;
+  font-weight:750 !important;
+}
+
+.quick-item:nth-child(1){
+  background:linear-gradient(145deg,#fff1f2,#ffffff) !important;
+}
+.quick-item:nth-child(2){
+  background:linear-gradient(145deg,#fff0f3,#ffffff) !important;
+}
+.quick-item:nth-child(3){
+  background:linear-gradient(145deg,#fff7e9,#ffffff) !important;
+}
+.quick-item:nth-child(4){
+  background:linear-gradient(145deg,#edf8ff,#ffffff) !important;
+}
+
+.plan-card{
+  padding:30px 28px !important;
+}
+.plan-card h3{
+  font-size:30px !important;
+  font-weight:950 !important;
+}
+.plan-card .price{
+  font-size:52px !important;
+  font-weight:950 !important;
+}
+.plan-list li{
+  font-size:18px !important;
+  font-weight:750 !important;
+}
+
+.section-heading h2,
+.section-title h2{
+  color:#ffffff !important;
+  font-weight:950 !important;
+}
+.section-heading p,
+.section-title p{
+  color:#f3f3f6 !important;
+  font-weight:650 !important;
+}
+
+.mnp-method-card,
+.service-card{
+  background:linear-gradient(145deg,#26262d,#151519) !important;
+  border:1px solid rgba(255,255,255,.22) !important;
+}
+.mnp-method-card h3,
+.service-card h3{
+  color:#ff5864 !important;
+  font-weight:950 !important;
+}
+.mnp-method-card p,
+.service-card p{
+  color:#ffffff !important;
+  font-weight:650 !important;
+}
+
+.mnp-confirm-panel{
+  display:none;
+}
+.mnp-confirm-panel.open{
+  display:block !important;
+}
+
+@media(max-width:620px){
+  .quick-item strong{font-size:18px !important}
+  .quick-item span{font-size:15px !important}
+  .plan-card h3{font-size:26px !important}
+  .plan-card .price{font-size:44px !important}
+  .plan-list li{font-size:16px !important}
+}
+
+.site-version{display:inline-block;margin-top:10px;font-size:12px;font-weight:900;opacity:.65}
+
+/* V5.4 Final — MNP guide poster images */
+.mnp-guide-poster{
+  display:block;
+  width:100%;
+  max-width:900px;
+  height:auto;
+  margin:0 auto 22px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 18px 45px rgba(0,0,0,.32);
+  background:#fff;
+}
+.mnp-poster-caption{
+  margin:0 0 18px;
+  padding:12px 15px;
+  border-radius:12px;
+  background:rgba(224,0,22,.12);
+  border:1px solid rgba(255,73,86,.32);
+  color:#fff;
+  font-size:14px;
+  font-weight:750;
+  line-height:1.55;
+}
+@media(max-width:620px){
+  .mnp-guide-poster{
+    border-radius:12px;
+    margin-bottom:16px;
+  }
+  .telco-body{
+    padding-left:12px !important;
+    padding-right:12px !important;
+  }
 }
 
 /* APN Guide */
@@ -1079,7 +1212,7 @@
     <div class="service-grid">
       <article class="service-card reveal"><div class="service-icon">📱</div><h3 data-i18n="s1_title">新 SIM 申请</h3><p data-i18n="s1_desc">提供新号码与配套咨询。</p></article>
       <button class="service-card mnp-service-trigger reveal" id="mnpServiceTrigger"
-        type="button" aria-expanded="false" aria-controls="mnpConfirmPanel">
+        type="button" onclick="toggleMnp54()" aria-expanded="false" aria-controls="mnpConfirmPanel">
         <div class="service-icon">🔄</div>
         <h3 data-i18n="s2_title">MNP 转台</h3>
         <p data-i18n="s2_desc">协助保留原号码转换至 TuneTalk。</p>
@@ -1097,11 +1230,15 @@
         </div>
 
 
+        <p class="mnp-poster-caption" data-i18n="mnp_image_note">点击电讯公司名称即可查看中英文 MNP 回复教学图。请始终以客户实际收到的 SMS 为准。</p>
+
         <div class="telco-list">
 
           <details class="telco-item" open>
             <summary>Hotlink / Maxis</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/maxis.png" alt="Hotlink / Maxis MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/maxis.png</p>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
                 <strong>23599</strong>
@@ -1118,6 +1255,8 @@
           <details class="telco-item">
             <summary>Digi</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/digi.png" alt="Digi MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/digi.png</p>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
                 <strong>27676</strong>
@@ -1133,6 +1272,8 @@
           <details class="telco-item">
             <summary>Celcom</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/celcom.png" alt="Celcom MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/celcom.png</p>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
                 <strong>28882</strong>
@@ -1149,6 +1290,8 @@
           <details class="telco-item">
             <summary>U Mobile</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/umobile.png" alt="U Mobile MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/umobile.png</p>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
                 <strong>28138</strong>
@@ -1165,6 +1308,8 @@
           <details class="telco-item">
             <summary>XOX Mobile</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/xox.png" alt="XOX MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/xox.png</p>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
                 <strong>20002</strong>
@@ -1181,6 +1326,8 @@
           <details class="telco-item">
             <summary>redONE Prepaid</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/redone-prepaid.png" alt="redONE Prepaid MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/redone-prepaid.png</p>
               <div class="mnp-special-label" data-i18n="redone_prepaid_only">仅适用于 redONE Prepaid</div>
               <div class="mnp-badge-row">
                 <span class="mnp-badge" data-i18n="mnp_sender_label">SMS 发送号码</span>
@@ -1197,6 +1344,8 @@
           <details class="telco-item">
             <summary>redONE Postpaid</summary>
             <div class="telco-body">
+              <img class="mnp-guide-poster" src="images/redone-postpaid.png" alt="redONE Postpaid MNP reply guide" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+              <p class="mnp-poster-caption" style="display:none;">图片尚未上传或文件名不正确：images/redone-postpaid.png</p>
               <div class="mnp-special-label" data-i18n="redone_postpaid_only">仅适用于 redONE Postpaid</div>
 
               <div class="mnp-step-card">
@@ -1485,6 +1634,7 @@
       本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。
     </div>
   </div>
+<span class="site-version">V5.4</span>
 </footer>
 
 <a class="floating-wa" target="_blank"
@@ -1534,7 +1684,7 @@
 
       mnp_confirm_title:"MNP 转台确认回复",
       mnp_confirm_intro:"点击客户目前使用的电讯公司，查看确认短信的回复示范。",
-      mnp_sms_alert:"⚠️ 以下内容是回复示范。客户必须以实际收到的 SMS 内容、发送号码和截止时间为准。",
+      mnp_sms_alert:"⚠️ 以下内容是回复示范。客户必须以实际收到的 SMS 内容、发送号码和截止时间为准。",mnp_image_note:"点击电讯公司名称即可查看中英文 MNP 回复教学图。请始终以客户实际收到的 SMS 为准。",
       maxis_instruction:"收到来自 23599 的转台确认短信后，请按照以下格式回复：",
       sms_sender:"SMS 发送号码：23599",
       maxis_number_note:"把 601XXXXXXXX 替换成客户要保留的手机号码，例如 60105377777。",
@@ -1848,7 +1998,7 @@
   },{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
 
-  // V5.3.1.1: MNP panel fix
+  // V5.4.1: MNP panel fix
   const mnpTrigger531 = document.getElementById("mnpServiceTrigger");
   const mnpPanel531 = document.getElementById("mnpConfirmPanel");
   const mnpClose531 = document.getElementById("mnpCloseButton");
@@ -1862,15 +2012,15 @@
     if(icon) icon.textContent = open ? "−" : "＋";
     if(open) setTimeout(()=>mnpPanel531.scrollIntoView({behavior:"smooth",block:"start"}),80);
   }
-  mnpTrigger531?.addEventListener("click",()=>toggleMnp531());
+  
   mnpClose531?.addEventListener("click",()=>toggleMnp531(false));
 
-  // V5.3.1.1: customer review slider fix
+  // V5.4.1: customer review slider fix
   const reviewsTrack531=document.getElementById("reviewsTrack");
   document.querySelector(".review-prev")?.addEventListener("click",()=>reviewsTrack531?.scrollBy({left:-Math.max(280,reviewsTrack531.clientWidth*.8),behavior:"smooth"}));
   document.querySelector(".review-next")?.addEventListener("click",()=>reviewsTrack531?.scrollBy({left:Math.max(280,reviewsTrack531.clientWidth*.8),behavior:"smooth"}));
 
-  // V5.3.1.1: free rule-based TT Buddy
+  // V5.4.1: free rule-based TT Buddy
   const buddyMessages=document.getElementById("buddyMessages");
   const buddyForm=document.getElementById("buddyForm");
   const buddyInput=document.getElementById("buddyInput");
@@ -1982,6 +2132,28 @@
     const detail=buddyLastQuestion?`\n\nQuestion / 问题：${buddyLastQuestion}`:"";
     window.open(`https://wa.me/60105377777?text=${encodeURIComponent(intro+detail)}`,"_blank");
   });
+
+
+  window.toggleMnp54 = function(){
+    const trigger = document.getElementById("mnpServiceTrigger");
+    const panel = document.getElementById("mnpConfirmPanel");
+    if(!trigger || !panel) return;
+
+    const open = !panel.classList.contains("open");
+    panel.classList.toggle("open", open);
+    panel.style.display = open ? "block" : "none";
+    trigger.setAttribute("aria-expanded", String(open));
+
+    const icon = trigger.querySelector(".mnp-toggle-icon");
+    if(icon) icon.textContent = open ? "−" : "＋";
+
+    if(open){
+      setTimeout(() => panel.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      }), 80);
+    }
+  };
 
 </script>
 
