@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuneTalk Service V5.0 | SIM, MNP & eSIM</title>
+  <title>TuneTalk Service V5.3.1 | SIM, MNP & eSIM</title>
   <meta name="description" content="TuneTalk Service 提供 TuneTalk 配套、MNP、eSIM 与三语 APN 设置教学。">
 
   <style>
@@ -391,7 +391,7 @@
     .sms-box.compact{margin:10px 0 0}
 
     
-/* V5.3 additions */
+/* V5.3.1 additions */
 .mnp-method-section,.reviews-section{padding:80px 5%;background:#0d0d10}
 .mnp-method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
 .mnp-method-card{position:relative;background:#19191d;border:1px solid #303039;border-radius:22px;padding:24px;min-height:220px}
@@ -407,6 +407,169 @@
 .review-card p{line-height:1.7;margin-top:14px}.review-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:38px;height:38px;border:0;border-radius:50%;font-size:27px;font-weight:900;cursor:pointer}.review-prev{left:0}.review-next{right:0}
 .reviews-disclaimer{margin-top:16px;padding:14px 16px;border-radius:14px;background:#221d0e;border:1px solid #5d4d12;color:#e6d78b}
 @media(max-width:900px){.mnp-method-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.mnp-method-grid{grid-template-columns:1fr}.mnp-method-reminder,.reviews-summary{flex-direction:column;align-items:flex-start}.reviews-track{grid-auto-columns:88%}}
+
+
+/* V5.3.1.1 clarity and colour improvements */
+.section-heading h2,
+.section-title h2{
+  color:#fff !important;
+  font-size:clamp(34px,4vw,48px) !important;
+  font-weight:900 !important;
+  letter-spacing:-.5px;
+  text-shadow:0 3px 16px rgba(0,0,0,.55);
+}
+.section-heading p,
+.section-title p{
+  color:#eeeeF2 !important;
+  font-size:18px !important;
+  font-weight:600;
+  line-height:1.7;
+}
+.quick-item{
+  background:linear-gradient(145deg,#fff,#f2f2f5);
+  border:1px solid #ddd;
+  box-shadow:0 10px 28px rgba(25,25,35,.10);
+}
+.quick-item:nth-child(1){border-top:5px solid #e00016}
+.quick-item:nth-child(2){border-top:5px solid #760018}
+.quick-item:nth-child(3){border-top:5px solid #ff7a00}
+.quick-item:nth-child(4){border-top:5px solid #008ecf}
+.quick-item strong{
+  font-size:20px !important;
+  font-weight:900 !important;
+  color:#111 !important;
+}
+.quick-item span{
+  font-size:15px !important;
+  font-weight:700;
+  color:#555 !important;
+}
+.plans-grid{gap:22px}
+.plan-card{
+  border-width:2px !important;
+  box-shadow:0 18px 42px rgba(0,0,0,.14);
+}
+.plan-card:nth-child(1){
+  background:linear-gradient(145deg,#fff5f5,#fff);
+  border-color:#ffc4ca !important;
+}
+.plan-card:nth-child(2){
+  background:linear-gradient(145deg,#34000b,#160007);
+  border-color:#ff4053 !important;
+}
+.plan-card:nth-child(3){
+  background:linear-gradient(145deg,#fff8ed,#fff);
+  border-color:#ffc887 !important;
+}
+.plan-card h3{
+  font-size:28px !important;
+  font-weight:950 !important;
+}
+.plan-card .price{
+  font-size:48px !important;
+  font-weight:950 !important;
+  line-height:1.05;
+}
+.plan-card .price small{
+  font-size:16px !important;
+  font-weight:800;
+}
+.plan-list li{
+  font-size:17px !important;
+  font-weight:700 !important;
+  line-height:1.65;
+}
+.service-card{
+  background:linear-gradient(145deg,#202026,#151519) !important;
+  border:1px solid rgba(255,255,255,.17) !important;
+  box-shadow:0 16px 34px rgba(0,0,0,.28);
+}
+.service-card h3{
+  font-size:23px !important;
+  font-weight:900 !important;
+  color:#ff4b56 !important;
+}
+.service-card p{
+  color:#f1f1f4 !important;
+  font-size:17px !important;
+  font-weight:600;
+  line-height:1.6;
+}
+.mnp-method-card{
+  background:linear-gradient(145deg,#24242a,#151519) !important;
+  border:1px solid rgba(255,255,255,.20) !important;
+  box-shadow:0 16px 38px rgba(0,0,0,.34);
+}
+.mnp-method-card h3{
+  color:#ff5260 !important;
+  font-size:23px !important;
+  font-weight:900 !important;
+}
+.mnp-method-card p{
+  color:#fff !important;
+  font-size:17px !important;
+  font-weight:650;
+}
+.mnp-method-reminder{
+  background:linear-gradient(135deg,#ed001b,#8c0010) !important;
+  box-shadow:0 16px 38px rgba(190,0,25,.35);
+}
+.mnp-method-reminder h3,
+.mnp-method-reminder p{color:#fff !important;font-weight:800 !important}
+
+/* Free TT Buddy */
+.buddy-chat{
+  margin-top:24px;background:#111116;border:1px solid #34343d;
+  border-radius:22px;overflow:hidden;box-shadow:0 20px 48px rgba(0,0,0,.32);
+}
+.buddy-chat-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 18px;background:linear-gradient(135deg,#e00016,#76000e);color:#fff;
+}
+.buddy-chat-head strong{display:block;font-size:20px}
+.buddy-chat-head span{font-size:13px;font-weight:700;opacity:.95}
+.buddy-status-dot{width:12px;height:12px;border-radius:50%;background:#39e56f;box-shadow:0 0 0 5px rgba(57,229,111,.16)}
+.buddy-messages{
+  height:250px;overflow:auto;padding:16px;display:flex;flex-direction:column;
+  gap:10px;background:linear-gradient(180deg,#17171c,#0f0f13);
+}
+.buddy-message{
+  max-width:88%;padding:12px 14px;border-radius:16px;font-size:15px;
+  font-weight:650;line-height:1.55;white-space:pre-line;
+}
+.buddy-message.bot{align-self:flex-start;background:#282830;color:#fff;border-bottom-left-radius:5px}
+.buddy-message.user{align-self:flex-end;background:#e00016;color:#fff;border-bottom-right-radius:5px}
+.buddy-quick-actions{display:flex;flex-wrap:wrap;gap:8px;padding:12px 14px;background:#17171c}
+.buddy-quick-actions button{
+  border:1px solid #44444e;background:#24242a;color:#fff;padding:8px 11px;
+  border-radius:999px;cursor:pointer;font-weight:800;font-size:13px;
+}
+.buddy-quick-actions button:hover{background:#e00016;border-color:#e00016}
+.buddy-input-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px;background:#101014}
+.buddy-input-row input{
+  min-width:0;border:1px solid #3a3a43;background:#202026;color:#fff;
+  padding:13px 14px;border-radius:13px;font-size:15px;outline:none;
+}
+.buddy-input-row input:focus{border-color:#ff4251}
+.buddy-input-row button,.buddy-human-btn{
+  border:0;border-radius:13px;font-weight:900;cursor:pointer;
+}
+.buddy-input-row button{background:#e00016;color:#fff;padding:0 18px}
+.buddy-human-btn{
+  width:calc(100% - 24px);margin:0 12px 14px;padding:12px;
+  background:#25d366;color:#fff;font-size:15px;
+}
+.mnp-confirm-panel.open{display:block !important}
+
+@media(max-width:620px){
+  .section-heading h2,.section-title h2{font-size:31px !important}
+  .section-heading p,.section-title p{font-size:16px !important}
+  .plan-card h3{font-size:25px !important}
+  .plan-card .price{font-size:41px !important}
+  .plan-list li{font-size:16px !important}
+  .quick-item strong{font-size:17px !important}
+  .buddy-messages{height:280px}
+}
 
 /* APN Guide */
     .apn-guide{
@@ -774,8 +937,7 @@
 <section id="plans">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="tag">Popular Plans</div>
-      <h2 data-i18n="plans_title">热门 TuneTalk 配套</h2>
+            <h2 data-i18n="plans_title">热门 TuneTalk 配套</h2>
       <p data-i18n="plans_desc">选择适合你的配套，也可以直接通过 WhatsApp 询问。</p>
     </div>
 
@@ -868,9 +1030,40 @@
         <div class="buddy-point" data-i18n="b4">🌐 全国线上服务</div>
       </div>
 
-      <a class="btn btn-red" target="_blank"
-         href="https://wa.me/60105377777?text=你好 TT Buddy，我想了解 TuneTalk 配套。"
-         data-i18n="buddy_cta">找 TT Buddy 咨询</a>
+      <div class="buddy-chat" id="buddyChat">
+        <div class="buddy-chat-head">
+          <div>
+            <strong>TT Buddy</strong>
+            <span data-i18n="buddy_online">免费自动客服 · Online</span>
+          </div>
+          <span class="buddy-status-dot"></span>
+        </div>
+
+        <div class="buddy-messages" id="buddyMessages" aria-live="polite">
+          <div class="buddy-message bot" data-i18n="buddy_welcome">
+            你好！请选择问题，或输入简单关键词，例如：转台、APN、不能上网、新号码、eSIM。
+          </div>
+        </div>
+
+        <div class="buddy-quick-actions">
+          <button type="button" data-buddy-question="newsim" data-i18n="buddy_q_newsim">新号码注册</button>
+          <button type="button" data-buddy-question="mnp" data-i18n="buddy_q_mnp">MNP 转台</button>
+          <button type="button" data-buddy-question="internet" data-i18n="buddy_q_internet">不能上网</button>
+          <button type="button" data-buddy-question="apn" data-i18n="buddy_q_apn">APN 设置</button>
+          <button type="button" data-buddy-question="esim" data-i18n="buddy_q_esim">eSIM</button>
+          <button type="button" data-buddy-question="plans" data-i18n="buddy_q_plans">配套推荐</button>
+        </div>
+
+        <form class="buddy-input-row" id="buddyForm">
+          <input id="buddyInput" type="text" autocomplete="off"
+                 data-i18n-placeholder="buddy_placeholder"
+                 placeholder="输入问题，例如：U Mobile 转台怎样回复？">
+          <button type="submit" data-i18n="buddy_send">发送</button>
+        </form>
+
+        <button class="buddy-human-btn" id="buddyHumanBtn" type="button"
+                data-i18n="buddy_human">转人工 WhatsApp</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1301,6 +1494,11 @@
   const translations = {
     zh:{
 
+      buddy_online:"免费自动客服 · 在线",
+      buddy_welcome:"你好！请选择问题，或输入简单关键词，例如：转台、APN、不能上网、新号码、eSIM。",
+      buddy_q_newsim:"新号码注册",buddy_q_mnp:"MNP 转台",buddy_q_internet:"不能上网",buddy_q_apn:"APN 设置",buddy_q_esim:"eSIM",buddy_q_plans:"配套推荐",
+      buddy_placeholder:"输入问题，例如：U Mobile 转台怎样回复？",buddy_send:"发送",buddy_human:"转人工 WhatsApp",
+
       mnp_method_eyebrow:"MNP GUIDE",mnp_method_title:"MNP 转台方法",mnp_method_desc:"保留原号码转换至 TuneTalk，只需按照以下步骤完成。",
       mnp_method_step1_title:"提交转台申请",mnp_method_step1_desc:"提供要保留的手机号码、登记资料和想申请的配套。",
       mnp_method_step2_title:"等待确认 SMS",mnp_method_step2_desc:"保持旧 SIM 正常使用，并留意原电讯公司的确认短信。",
@@ -1385,6 +1583,11 @@
     },
     en:{
 
+      buddy_online:"Free automated support · Online",
+      buddy_welcome:"Hello! Choose a topic or enter simple keywords such as MNP, APN, no internet, new SIM or eSIM.",
+      buddy_q_newsim:"New SIM registration",buddy_q_mnp:"MNP port-in",buddy_q_internet:"No internet",buddy_q_apn:"APN settings",buddy_q_esim:"eSIM",buddy_q_plans:"Plan advice",
+      buddy_placeholder:"Enter a question, e.g. How do I reply to U Mobile MNP?",buddy_send:"Send",buddy_human:"Human help on WhatsApp",
+
       mnp_method_eyebrow:"MNP GUIDE",mnp_method_title:"How to Switch via MNP",mnp_method_desc:"Keep your existing number and switch to TuneTalk by following these steps.",
       mnp_method_step1_title:"Submit your request",mnp_method_step1_desc:"Provide the number to retain, registered details and preferred plan.",
       mnp_method_step2_title:"Wait for confirmation SMS",mnp_method_step2_desc:"Keep the old SIM active and watch for the confirmation SMS from your current telco.",
@@ -1468,6 +1671,11 @@
       footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
     },
     ms:{
+
+      buddy_online:"Khidmat automatik percuma · Dalam talian",
+      buddy_welcome:"Hai! Pilih topik atau taip kata kunci seperti MNP, APN, tiada internet, SIM baharu atau eSIM.",
+      buddy_q_newsim:"Daftar SIM baharu",buddy_q_mnp:"MNP tukar telco",buddy_q_internet:"Tiada internet",buddy_q_apn:"Tetapan APN",buddy_q_esim:"eSIM",buddy_q_plans:"Cadangan pelan",
+      buddy_placeholder:"Taip soalan, contoh: Bagaimana balas MNP U Mobile?",buddy_send:"Hantar",buddy_human:"Bantuan manusia di WhatsApp",
 
       mnp_method_eyebrow:"PANDUAN MNP",mnp_method_title:"Cara Tukar Telco melalui MNP",mnp_method_desc:"Kekalkan nombor sedia ada dan tukar ke TuneTalk dengan langkah berikut.",
       mnp_method_step1_title:"Hantar permohonan",mnp_method_step1_desc:"Berikan nombor yang ingin dikekalkan, maklumat pendaftaran dan pelan pilihan.",
@@ -1639,6 +1847,142 @@
     });
   },{threshold:.12});
   document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+  // V5.3.1.1: MNP panel fix
+  const mnpTrigger531 = document.getElementById("mnpServiceTrigger");
+  const mnpPanel531 = document.getElementById("mnpConfirmPanel");
+  const mnpClose531 = document.getElementById("mnpCloseButton");
+
+  function toggleMnp531(force){
+    if(!mnpTrigger531 || !mnpPanel531) return;
+    const open = typeof force === "boolean" ? force : !mnpPanel531.classList.contains("open");
+    mnpPanel531.classList.toggle("open", open);
+    mnpTrigger531.setAttribute("aria-expanded", String(open));
+    const icon = mnpTrigger531.querySelector(".mnp-toggle-icon");
+    if(icon) icon.textContent = open ? "−" : "＋";
+    if(open) setTimeout(()=>mnpPanel531.scrollIntoView({behavior:"smooth",block:"start"}),80);
+  }
+  mnpTrigger531?.addEventListener("click",()=>toggleMnp531());
+  mnpClose531?.addEventListener("click",()=>toggleMnp531(false));
+
+  // V5.3.1.1: customer review slider fix
+  const reviewsTrack531=document.getElementById("reviewsTrack");
+  document.querySelector(".review-prev")?.addEventListener("click",()=>reviewsTrack531?.scrollBy({left:-Math.max(280,reviewsTrack531.clientWidth*.8),behavior:"smooth"}));
+  document.querySelector(".review-next")?.addEventListener("click",()=>reviewsTrack531?.scrollBy({left:Math.max(280,reviewsTrack531.clientWidth*.8),behavior:"smooth"}));
+
+  // V5.3.1.1: free rule-based TT Buddy
+  const buddyMessages=document.getElementById("buddyMessages");
+  const buddyForm=document.getElementById("buddyForm");
+  const buddyInput=document.getElementById("buddyInput");
+  let buddyLastQuestion="";
+
+  const buddyAnswers={
+    zh:{
+      newsim:"新号码注册需要有效身份证件，并按照登记流程完成身份验证。请勿在公开聊天中发送身份证照片。需要办理时可转 WhatsApp 联系人工。",
+      mnp:"MNP 可保留原号码转换到 TuneTalk。提交申请后，请保持旧 SIM 可用，并在截止时间前按照原电讯公司 SMS 的准确格式回复。点击页面上的「MNP 转台」卡片可查看各公司回复方法。",
+      internet:"请先开启 Mobile Data、确认选择 TuneTalk SIM 上网，然后重新启动手机。仍无法上网，请检查 APN：Name = TuneTalk，APN = tunetalk，Username 和 Password 留空，其他设置保持默认。",
+      apn:"TuneTalk APN：\nName：TuneTalk\nAPN：tunetalk\nUsername：留空\nPassword：留空\n其他设置保持默认，保存后选择该 APN 并重启手机。",
+      esim:"eSIM 需要兼容 eSIM 的手机。取得 QR Code 后进入手机的 SIM/eSIM 设置扫描并启用。QR Code 属于敏感资料，不要公开分享。",
+      plans:"一般日常使用可考虑 EPIK35+；需要更多流量、Hotspot 或漫游可考虑 EPIK50+。最终配套以网站最新资料和申请时确认为准。",
+      maxis:"Hotlink / Maxis 通常收到来自 23599 的 SMS。回复示范：PortOut Yes 60123456789。请换成要保留的号码，并以实际 SMS 为准。",
+      digi:"Digi 通常收到来自 27676 的 SMS。回复示范：PortOut YES 60123456789。",
+      celcom:"Celcom 通常收到来自 28882 的 SMS。回复示范：PortOut YES 60123456789。",
+      umobile:"U Mobile 通常收到来自 28138 的 SMS。回复：Confirm PortOut 60123456789。不要使用 PortOut YES。",
+      xox:"XOX 通常收到来自 20002 的 SMS。回复示范：PortOut YES 60123456789。",
+      redone:"redONE Prepaid：收到 28171 后回复 YES。redONE Postpaid：从 69288 收到通知后，把 MNP Yes 另外发送到 23388。",
+      fallback:"我暂时无法确定这个问题。为了避免提供错误资料，请转 WhatsApp 给人工协助。"
+    },
+    en:{
+      newsim:"New SIM registration requires valid identification and identity verification. Do not send an ID photo in public chat. Use WhatsApp for application assistance.",
+      mnp:"MNP lets you keep your number when switching to TuneTalk. Keep the old SIM active and reply to the current telco's SMS in the exact format before the deadline. Open the MNP card for telco-specific instructions.",
+      internet:"Turn on Mobile Data, confirm TuneTalk SIM is selected for data, then restart the phone. If it still fails, use APN Name = TuneTalk, APN = tunetalk, with username and password blank.",
+      apn:"TuneTalk APN:\nName: TuneTalk\nAPN: tunetalk\nUsername: leave blank\nPassword: leave blank\nKeep other settings at default, save, select the APN and restart.",
+      esim:"eSIM requires a compatible phone. Open the SIM/eSIM settings, scan the supplied QR code and activate it. Never share the QR code publicly.",
+      plans:"EPIK35+ may suit normal daily use. EPIK50+ may suit heavier data, hotspot or roaming needs. Confirm the latest plan details before applying.",
+      maxis:"Hotlink / Maxis commonly sends from 23599. Example reply: PortOut Yes 60123456789. Replace it with the number to retain and follow the actual SMS.",
+      digi:"Digi commonly sends from 27676. Example reply: PortOut YES 60123456789.",
+      celcom:"Celcom commonly sends from 28882. Example reply: PortOut YES 60123456789.",
+      umobile:"U Mobile commonly sends from 28138. Reply: Confirm PortOut 60123456789. Do not use PortOut YES.",
+      xox:"XOX commonly sends from 20002. Example reply: PortOut YES 60123456789.",
+      redone:"redONE Prepaid: reply YES to the SMS from 28171. redONE Postpaid: after receiving notice from 69288, send MNP Yes separately to 23388.",
+      fallback:"I cannot confirm this safely. Please continue on WhatsApp for human assistance."
+    },
+    ms:{
+      newsim:"Pendaftaran SIM baharu memerlukan dokumen pengenalan yang sah dan pengesahan identiti. Jangan hantar gambar IC dalam chat awam. Gunakan WhatsApp untuk bantuan.",
+      mnp:"MNP membolehkan anda mengekalkan nombor semasa bertukar ke TuneTalk. Pastikan SIM lama aktif dan balas SMS telco semasa mengikut format tepat sebelum tarikh akhir.",
+      internet:"Aktifkan Mobile Data, pastikan SIM TuneTalk dipilih untuk data dan hidupkan semula telefon. Jika masih gagal, gunakan Name = TuneTalk, APN = tunetalk, username dan password dikosongkan.",
+      apn:"APN TuneTalk:\nName: TuneTalk\nAPN: tunetalk\nUsername: kosongkan\nPassword: kosongkan\nKekalkan tetapan lain, simpan, pilih APN dan hidupkan semula telefon.",
+      esim:"eSIM memerlukan telefon yang serasi. Buka tetapan SIM/eSIM, imbas QR Code yang diberi dan aktifkan. Jangan kongsi QR Code secara terbuka.",
+      plans:"EPIK35+ sesuai untuk kegunaan biasa. EPIK50+ lebih sesuai untuk data tinggi, hotspot atau roaming. Sahkan maklumat terkini sebelum memohon.",
+      maxis:"Hotlink / Maxis biasanya menghantar SMS daripada 23599. Contoh balasan: PortOut Yes 60123456789.",
+      digi:"Digi biasanya menghantar SMS daripada 27676. Contoh balasan: PortOut YES 60123456789.",
+      celcom:"Celcom biasanya menghantar SMS daripada 28882. Contoh balasan: PortOut YES 60123456789.",
+      umobile:"U Mobile biasanya menghantar SMS daripada 28138. Balas: Confirm PortOut 60123456789. Jangan gunakan PortOut YES.",
+      xox:"XOX biasanya menghantar SMS daripada 20002. Contoh balasan: PortOut YES 60123456789.",
+      redone:"redONE Prepaid: balas YES kepada SMS daripada 28171. redONE Postpaid: selepas notis daripada 69288, hantar MNP Yes secara berasingan ke 23388.",
+      fallback:"Saya tidak dapat mengesahkan jawapan ini. Sila teruskan melalui WhatsApp untuk bantuan manusia."
+    }
+  };
+
+  function buddyLang(){
+    const lang=(document.documentElement.lang || "zh").toLowerCase();
+    if(lang.startsWith("en")) return "en";
+    if(lang.startsWith("ms") || lang.startsWith("bm")) return "ms";
+    return "zh";
+  }
+  function buddyAdd(text,type="bot"){
+    if(!buddyMessages) return;
+    const div=document.createElement("div");
+    div.className=`buddy-message ${type}`;
+    div.textContent=text;
+    buddyMessages.appendChild(div);
+    buddyMessages.scrollTop=buddyMessages.scrollHeight;
+  }
+  function buddyCategory(text){
+    const q=text.toLowerCase();
+    if(/u\s*mobile|umobile/.test(q)) return "umobile";
+    if(/maxis|hotlink/.test(q)) return "maxis";
+    if(/digi/.test(q)) return "digi";
+    if(/celcom/.test(q)) return "celcom";
+    if(/xox|onexox/.test(q)) return "xox";
+    if(/red\s*one|redone/.test(q)) return "redone";
+    if(/apn|access point/.test(q)) return "apn";
+    if(/不能上网|没网络|无网络|internet.*(tak|tidak|no|cannot)|tak boleh online|no internet|data.*tak/.test(q)) return "internet";
+    if(/mnp|转台|port.?out|tukar telco|keep.*number|保留.*号码/.test(q)) return "mnp";
+    if(/新号码|new sim|register|registration|daftar.*sim|sim baharu/.test(q)) return "newsim";
+    if(/esim|qr code/.test(q)) return "esim";
+    if(/配套|plan|pelan|epik35|epik50|roaming|hotspot/.test(q)) return "plans";
+    return "fallback";
+  }
+  function buddyReply(text){
+    const lang=buddyLang();
+    const category=buddyCategory(text);
+    buddyLastQuestion=text;
+    buddyAdd(buddyAnswers[lang][category] || buddyAnswers[lang].fallback);
+  }
+  document.querySelectorAll("[data-buddy-question]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const key=btn.dataset.buddyQuestion;
+      buddyAdd(btn.textContent.trim(),"user");
+      buddyLastQuestion=btn.textContent.trim();
+      buddyAdd(buddyAnswers[buddyLang()][key] || buddyAnswers[buddyLang()].fallback);
+    });
+  });
+  buddyForm?.addEventListener("submit",e=>{
+    e.preventDefault();
+    const text=buddyInput?.value.trim();
+    if(!text) return;
+    buddyAdd(text,"user");
+    buddyInput.value="";
+    setTimeout(()=>buddyReply(text),180);
+  });
+  document.getElementById("buddyHumanBtn")?.addEventListener("click",()=>{
+    const lang=buddyLang();
+    const intro=lang==="en"?"Hello, I was transferred from TT Buddy and need human assistance.":lang==="ms"?"Hai, saya datang daripada TT Buddy dan memerlukan bantuan manusia.":"你好，我从 TT Buddy 转来，需要人工协助。";
+    const detail=buddyLastQuestion?`\n\nQuestion / 问题：${buddyLastQuestion}`:"";
+    window.open(`https://wa.me/60105377777?text=${encodeURIComponent(intro+detail)}`,"_blank");
+  });
+
 </script>
 
 </body>
