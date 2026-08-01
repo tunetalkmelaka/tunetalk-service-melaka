@@ -1,0 +1,34 @@
+[
+  {
+    "title": "EPIK35+",
+    "image": "images/epik35.png",
+    "alt": "TuneTalk EPIK35+ plan promotion",
+    "link": "#plans",
+    "order": 1,
+    "enabled": true
+  },
+  {
+    "title": "EPIK50+",
+    "image": "images/epik50.png",
+    "alt": "TuneTalk EPIK50+ plan promotion",
+    "link": "#plans",
+    "order": 2,
+    "enabled": true
+  },
+  {
+    "title": "MNP",
+    "image": "images/mnp.png",
+    "alt": "TuneTalk MNP keep your number guide",
+    "link": "#services",
+    "order": 3,
+    "enabled": true
+  },
+  {
+    "title": "eSIM",
+    "image": "images/esim.png",
+    "alt": "TuneTalk eSIM service",
+    "link": "#services",
+    "order": 4,
+    "enabled": true
+  }
+]

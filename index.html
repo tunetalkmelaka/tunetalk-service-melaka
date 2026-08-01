@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- TuneTalk Service V6.0 SEO Final | Malaysia Edition | Updated 2026-08-01 -->
+  <!-- TuneTalk Service V6.1 Ultimate | Malaysia Edition | Updated 2026-08-01 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TuneTalk Service Malaysia | SIM, MNP, eSIM & APN Guide</title>
-  <meta name="description" content="TuneTalk Service Malaysia 提供全国 TuneTalk SIM、MNP 保留号码转台、eSIM、APN 设置、配套比较与 WhatsApp 在线协助。">
+  <title>TuneTalk Service Malaysia | SIM, MNP, eSIM, APN & Plan Support</title>
+  <meta name="description" content="TuneTalk Service Malaysia 提供全马 TuneTalk SIM、MNP 保留号码转台、eSIM、APN 设置、配套比较、三语常见问题与 WhatsApp 在线协助。">
   <meta name="keywords" content="TuneTalk Malaysia, TuneTalk SIM, TuneTalk MNP, TuneTalk eSIM, TuneTalk APN, TuneTalk Service, TuneTalk registration, SIM card Malaysia">
   <meta name="author" content="TuneTalk Service">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -1098,6 +1098,7 @@ body{
         <a href="#apn" data-i18n="nav_apn">APN 教学</a>
         <a href="#recommend" data-i18n="nav_recommend">配套推荐</a>
         <a href="#buddy" data-i18n="nav_buddy">TT Buddy</a>
+        <a href="#faq" data-i18n="nav_faq">常见问题</a>
         <a href="#contact" data-i18n="nav_contact">联系我们</a>
         <a class="nav-cta" target="_blank"
            href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。">WhatsApp</a>
@@ -1117,10 +1118,12 @@ body{
 <header class="hero" id="home">
   <div class="slider-shell">
     <div class="slider" id="slider">
-      <div class="slide active" style="--slide-bg:url('images/epik35.png')"><img src="images/epik35.png" alt="EPIK35+ Banner"></div>
-      <div class="slide" style="--slide-bg:url('images/epik50.png')"><img src="images/epik50.png" alt="EPIK50+ Banner"></div>
-      <div class="slide" style="--slide-bg:url('images/mnp.png')"><img src="images/mnp.png" alt="MNP Banner"></div>
-      <div class="slide" style="--slide-bg:url('images/esim.png')"><img src="images/esim.png" alt="eSIM Banner"></div>
+      <div id="slidesMount">
+        <a class="slide active" href="#plans"><img src="images/epik35.png" alt="EPIK35+ Banner"></a>
+        <a class="slide" href="#plans"><img src="images/epik50.png" alt="EPIK50+ Banner"></a>
+        <a class="slide" href="#services"><img src="images/mnp.png" alt="MNP Banner"></a>
+        <a class="slide" href="#services"><img src="images/esim.png" alt="eSIM Banner"></a>
+      </div>
 
       <button class="slider-arrow prev" id="prevBtn" aria-label="上一张">‹</button>
       <button class="slider-arrow next" id="nextBtn" aria-label="下一张">›</button>
@@ -1665,17 +1668,16 @@ body{
 <section class="faq-section" id="faq">
   <div class="container">
     <div class="section-heading reveal">
-      <div class="tag">FAQ MALAYSIA</div>
-      <h2 style="color:#111!important;text-shadow:none">TuneTalk 常见问题</h2>
-      <p style="color:#666!important">全国顾客常问的新 SIM、MNP、eSIM 与 APN 问题。</p>
+      <h2 data-i18n="faq_title">TuneTalk 常见问题</h2>
+      <p data-i18n="faq_desc">全马顾客常问的新 SIM、MNP、eSIM 与 APN 问题。</p>
     </div>
     <div class="faq-grid">
-      <details class="faq-item reveal"><summary>可以保留原来的手机号码转去 TuneTalk 吗？</summary><p>可以。提交 MNP 申请后，请保持旧 SIM 正常使用，并在截止时间前按照原电讯公司短信的格式回复。</p></details>
-      <details class="faq-item reveal"><summary>新 TuneTalk SIM 要怎样注册？</summary><p>请先通过 WhatsApp 联系我们。注册需使用获授权的注册流程，或在收到 SIM 后由顾客通过 TuneTalk 指定方式自行注册。</p></details>
-      <details class="faq-item reveal"><summary>TuneTalk APN 应该填写什么？</summary><p>Name 填写 TuneTalk，APN 填写 tunetalk；Username 与 Password 通常留空，其他项目保持默认。</p></details>
-      <details class="faq-item reveal"><summary>可以为全马顾客提供线上协助吗？</summary><p>可以。配套咨询、MNP 回复教学、eSIM 与 APN 支援可通过 WhatsApp 为马来西亚各州顾客提供。</p></details>
-      <details class="faq-item reveal"><summary>MNP 转台期间可以取消旧号码吗？</summary><p>不可以。转台完成前不要取消旧号码，也不要让旧 SIM 停止服务，否则申请可能失败。</p></details>
-      <details class="faq-item reveal"><summary>TT Buddy 是收费 AI 吗？</summary><p>不是。网站内的 TT Buddy 是免费的规则式助手，回答常见问题；无法确认时才会引导至 WhatsApp 人工支援。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q1">可以保留原来的手机号码转去 TuneTalk 吗？</summary><p data-i18n="faq_a1">可以。提交 MNP 申请后，请保持旧 SIM 正常使用，并在截止时间前按照原电讯公司短信的格式回复。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q2">新 TuneTalk SIM 要怎样注册？</summary><p data-i18n="faq_a2">请先通过 WhatsApp 联系我们。注册需使用获授权的注册流程，或在收到 SIM 后由顾客通过 TuneTalk 指定方式自行注册。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q3">TuneTalk APN 应该填写什么？</summary><p data-i18n="faq_a3">Name 填写 TuneTalk，APN 填写 tunetalk；Username 与 Password 通常留空，其他项目保持默认。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q4">可以为全马顾客提供线上协助吗？</summary><p data-i18n="faq_a4">可以。配套咨询、MNP 回复教学、eSIM 与 APN 支援可通过 WhatsApp 为马来西亚各州顾客提供。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q5">MNP 转台期间可以取消旧号码吗？</summary><p data-i18n="faq_a5">不可以。转台完成前不要取消旧号码，也不要让旧 SIM 停止服务，否则申请可能失败。</p></details>
+      <details class="faq-item reveal"><summary data-i18n="faq_q6">TT Buddy 是收费 AI 吗？</summary><p data-i18n="faq_a6">不是。网站内的 TT Buddy 是免费的规则式助手，回答常见问题；无法确认时才会引导至 WhatsApp 人工支援。</p></details>
     </div>
   </div>
 </section>
@@ -1724,15 +1726,24 @@ body{
       本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。
     </div>
   </div>
-<span class="site-version">V6.0 SEO</span>
+<span class="site-version">V6.1 Ultimate</span>
 </footer>
 
 <a class="floating-wa" target="_blank"
    href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 服务。">💬 WhatsApp</a>
 
-<script>
+<script type="module">
   const translations = {
     zh:{
+      nav_faq:"常见问题",
+      faq_title:"TuneTalk 常见问题",faq_desc:"全马顾客常问的新 SIM、MNP、eSIM 与 APN 问题。",
+      faq_q1:"可以保留原来的手机号码转去 TuneTalk 吗？",faq_a1:"可以。提交 MNP 申请后，请保持旧 SIM 正常使用，并在截止时间前按照原电讯公司短信的格式回复。",
+      faq_q2:"新 TuneTalk SIM 要怎样注册？",faq_a2:"请先通过 WhatsApp 联系我们。注册需使用获授权的注册流程，或在收到 SIM 后由顾客通过 TuneTalk 指定方式自行注册。",
+      faq_q3:"TuneTalk APN 应该填写什么？",faq_a3:"Name 填写 TuneTalk，APN 填写 tunetalk；Username 与 Password 通常留空，其他项目保持默认。",
+      faq_q4:"可以为全马顾客提供线上协助吗？",faq_a4:"可以。配套咨询、MNP 回复教学、eSIM 与 APN 支援可通过 WhatsApp 为马来西亚各州顾客提供。",
+      faq_q5:"MNP 转台期间可以取消旧号码吗？",faq_a5:"不可以。转台完成前不要取消旧号码，也不要让旧 SIM 停止服务，否则申请可能失败。",
+      faq_q6:"TT Buddy 是收费 AI 吗？",faq_a6:"不是。网站内的 TT Buddy 是免费的规则式助手，回答常见问题；无法确认时才会引导至 WhatsApp 人工支援。",
+
 
       buddy_online:"免费自动客服 · 在线",
       buddy_welcome:"你好！请选择问题，或输入简单关键词，例如：转台、APN、不能上网、新号码、eSIM。",
@@ -1822,6 +1833,15 @@ body{
       footer_note:"本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。"
     },
     en:{
+      nav_faq:"FAQ",
+      faq_title:"TuneTalk Frequently Asked Questions",faq_desc:"Common questions from customers across Malaysia about new SIM, MNP, eSIM and APN.",
+      faq_q1:"Can I keep my existing number when switching to TuneTalk?",faq_a1:"Yes. After submitting an MNP request, keep your old SIM active and reply to the confirmation SMS exactly as instructed before the deadline.",
+      faq_q2:"How do I register a new TuneTalk SIM?",faq_a2:"Contact us through WhatsApp first. Registration must use an authorised registration process, or the customer may self-register using TuneTalk's designated method after receiving the SIM.",
+      faq_q3:"What should I enter for TuneTalk APN?",faq_a3:"Enter TuneTalk as the Name and tunetalk as the APN. Username and Password are normally left blank, while other fields remain at their defaults.",
+      faq_q4:"Is online assistance available nationwide?",faq_a4:"Yes. Plan advice, MNP SMS guidance, eSIM and APN support are available through WhatsApp for customers throughout Malaysia.",
+      faq_q5:"Can I cancel my old number while MNP is in progress?",faq_a5:"No. Do not cancel the old number or let the old SIM service stop before the porting process is completed, as this may cause the request to fail.",
+      faq_q6:"Is TT Buddy a paid AI service?",faq_a6:"No. TT Buddy is a free rule-based website assistant for common questions. It redirects to WhatsApp support when it cannot confirm an answer.",
+
 
       buddy_online:"Free automated support · Online",
       buddy_welcome:"Hello! Choose a topic or enter simple keywords such as MNP, APN, no internet, new SIM or eSIM.",
@@ -1911,6 +1931,15 @@ body{
       footer_note:"This is an independent service and consultation website. Plans, coverage, eligibility, benefits and registration requirements are subject to Tune Talk's latest official terms."
     },
     ms:{
+      nav_faq:"Soalan Lazim",
+      faq_title:"Soalan Lazim TuneTalk",faq_desc:"Soalan biasa pelanggan seluruh Malaysia mengenai SIM baharu, MNP, eSIM dan APN.",
+      faq_q1:"Bolehkah saya kekalkan nombor lama apabila bertukar ke TuneTalk?",faq_a1:"Boleh. Selepas menghantar permohonan MNP, pastikan SIM lama terus aktif dan balas SMS pengesahan tepat seperti diarahkan sebelum tarikh akhir.",
+      faq_q2:"Bagaimanakah cara mendaftar SIM TuneTalk baharu?",faq_a2:"Hubungi kami melalui WhatsApp terlebih dahulu. Pendaftaran mesti menggunakan proses pendaftaran yang dibenarkan, atau pelanggan boleh mendaftar sendiri melalui kaedah yang ditetapkan TuneTalk selepas menerima SIM.",
+      faq_q3:"Apakah tetapan APN TuneTalk?",faq_a3:"Masukkan TuneTalk pada ruangan Name dan tunetalk pada ruangan APN. Username dan Password biasanya dibiarkan kosong, manakala tetapan lain dikekalkan pada nilai lalai.",
+      faq_q4:"Adakah bantuan dalam talian disediakan di seluruh Malaysia?",faq_a4:"Ya. Nasihat pelan, panduan SMS MNP, sokongan eSIM dan APN disediakan melalui WhatsApp untuk pelanggan di seluruh Malaysia.",
+      faq_q5:"Bolehkah saya membatalkan nombor lama semasa proses MNP?",faq_a5:"Tidak. Jangan batalkan nombor lama atau biarkan perkhidmatan SIM lama terhenti sebelum proses port selesai kerana permohonan mungkin gagal.",
+      faq_q6:"Adakah TT Buddy perkhidmatan AI berbayar?",faq_a6:"Tidak. TT Buddy ialah pembantu laman web berasaskan peraturan yang percuma. Ia akan mengarahkan pengguna ke sokongan WhatsApp apabila jawapan tidak dapat dipastikan.",
+
 
       buddy_online:"Khidmat automatik percuma · Dalam talian",
       buddy_welcome:"Hai! Pilih topik atau taip kata kunci seperti MNP, APN, tiada internet, SIM baharu atau eSIM.",
@@ -2027,6 +2056,22 @@ body{
     link.addEventListener("click", () => navLinks.classList.remove("open"));
   });
 
+  async function loadBannerConfig(){
+    try{
+      const response = await fetch("content/banners.json", {cache:"no-store"});
+      if(!response.ok) throw new Error("Banner config unavailable");
+      const banners = (await response.json()).filter(item => item.enabled !== false);
+      if(!banners.length) return;
+      const mount = document.getElementById("slidesMount");
+      mount.innerHTML = banners.sort((a,b)=>(a.order||0)-(b.order||0)).map((item,index)=>{
+        const href = item.link || "#plans";
+        const target = /^https?:/i.test(href) ? ' target="_blank" rel="noopener"' : '';
+        return `<a class="slide${index===0?' active':''}" href="${href}"${target}><img src="${item.image}" alt="${item.alt||item.title||'TuneTalk promotion banner'}" loading="${index===0?'eager':'lazy'}"></a>`;
+      }).join("");
+    }catch(error){ console.info("Using built-in banner fallback."); }
+  }
+
+  await loadBannerConfig();
   const slides = document.querySelectorAll(".slide");
   const dotsBox = document.getElementById("dots");
   const prevBtn = document.getElementById("prevBtn");
