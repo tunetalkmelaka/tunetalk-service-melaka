@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <!-- TuneTalk Service V6.1 Ultimate | Malaysia Edition | Updated 2026-08-01 -->
+  <!-- TuneTalk Service V7.0 Ultimate | Malaysia Edition | Updated 2026-08-01 -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- TuneTalk Service V7.0 Enterprise CMS -->
   <title>TuneTalk Service Malaysia | SIM, MNP, eSIM, APN & Plan Support</title>
   <meta name="description" content="TuneTalk Service Malaysia 提供全马 TuneTalk SIM、MNP 保留号码转台、eSIM、APN 设置、配套比较、三语常见问题与 WhatsApp 在线协助。">
   <meta name="keywords" content="TuneTalk Malaysia, TuneTalk SIM, TuneTalk MNP, TuneTalk eSIM, TuneTalk APN, TuneTalk Service, TuneTalk registration, SIM card Malaysia">
@@ -166,6 +167,10 @@
       color:var(--red);
       box-shadow:0 3px 10px rgba(0,0,0,.08);
     }
+    .mobile-lang-switch{display:none;width:100%;padding:12px 0 4px;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid #eee;margin-top:6px}
+    .mobile-lang-switch .lang-label{font-weight:900;margin-right:4px;color:#333}
+    .mobile-lang-switch .lang-btn{background:#f0f1f3;padding:9px 14px}
+    .mobile-lang-switch .lang-btn.active{background:var(--red);color:#fff}
     .menu-btn{
       display:none;
       border:0;
@@ -1034,7 +1039,11 @@ body{
     .reveal.show{opacity:1;transform:none}
 
     @media(max-width:1020px){
-      .menu-btn{display:block}
+      .mobile-lang-switch{display:none;width:100%;padding:12px 0 4px;gap:8px;align-items:center;flex-wrap:wrap;border-top:1px solid #eee;margin-top:6px}
+    .mobile-lang-switch .lang-label{font-weight:900;margin-right:4px;color:#333}
+    .mobile-lang-switch .lang-btn{background:#f0f1f3;padding:9px 14px}
+    .mobile-lang-switch .lang-btn.active{background:var(--red);color:#fff}
+    .menu-btn{display:block}
       .nav-right{gap:10px}
       .nav-links{
         position:absolute;
@@ -1050,6 +1059,7 @@ body{
         box-shadow:0 15px 35px rgba(0,0,0,.1);
       }
       .nav-links.open{display:flex}
+      .mobile-lang-switch{display:flex}
       .nav-links a{
         width:100%;
         padding:13px 0;
@@ -1102,6 +1112,12 @@ body{
         <a href="#contact" data-i18n="nav_contact">联系我们</a>
         <a class="nav-cta" target="_blank"
            href="https://wa.me/60105377777?text=你好，我想了解 TuneTalk 配套。">WhatsApp</a>
+        <div class="mobile-lang-switch" aria-label="Language selection">
+          <span class="lang-label">🌐 Language</span>
+          <button class="lang-btn" data-lang="ms">BM</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn active" data-lang="zh">中文</button>
+        </div>
       </div>
 
       <div class="lang-switch">
@@ -1726,7 +1742,7 @@ body{
       本网站为独立服务与咨询网站。所有配套、覆盖范围、资格、福利与注册要求，以 Tune Talk 官方最新条款为准。
     </div>
   </div>
-<span class="site-version">V6.1 Ultimate</span>
+<span class="site-version">V7.0 Ultimate</span>
 </footer>
 
 <a class="floating-wa" target="_blank"
@@ -2161,6 +2177,18 @@ body{
   const buddyInput=document.getElementById("buddyInput");
   let buddyLastQuestion="";
 
+  let buddyKnowledge=[];
+  async function loadBuddyKnowledge(){
+    try{
+      const r=await fetch("content/ttbuddy.json",{cache:"no-store"});
+      if(r.ok){
+        const data=await r.json();
+        buddyKnowledge=Array.isArray(data)?data.filter(x=>x && x.enabled!==false):[];
+      }
+    }catch(e){ console.info("Using built-in TT Buddy knowledge fallback."); }
+  }
+  await loadBuddyKnowledge();
+
   const buddyAnswers={
     zh:{
       newsim:"新号码注册需要有效身份证件，并按照登记流程完成身份验证。请勿在公开聊天中发送身份证照片。需要办理时可转 WhatsApp 联系人工。",
@@ -2239,11 +2267,28 @@ body{
     if(/配套|plan|pelan|epik35|epik50|roaming|hotspot/.test(q)) return "plans";
     return "fallback";
   }
+  function buddyDynamicAnswer(text,lang){
+    const q=text.toLowerCase();
+    let best=null,bestScore=0;
+    for(const item of buddyKnowledge){
+      const keys=Array.isArray(item.keywords)?item.keywords:[];
+      let score=0;
+      for(const k of keys){
+        const key=String(k||"").trim().toLowerCase();
+        if(key && q.includes(key)) score+=Math.max(1,key.length);
+      }
+      if(score>bestScore){best=item;bestScore=score;}
+    }
+    if(!best || bestScore===0) return "";
+    const answers=best.answers||{};
+    return answers[lang] || answers.zh || answers.en || answers.ms || "";
+  }
   function buddyReply(text){
     const lang=buddyLang();
     const category=buddyCategory(text);
     buddyLastQuestion=text;
-    buddyAdd(buddyAnswers[lang][category] || buddyAnswers[lang].fallback);
+    const dynamic=buddyDynamicAnswer(text,lang);
+    buddyAdd(dynamic || buddyAnswers[lang][category] || buddyAnswers[lang].fallback);
   }
   document.querySelectorAll("[data-buddy-question]").forEach(btn=>{
     btn.addEventListener("click",()=>{

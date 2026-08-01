@@ -1,0 +1,57 @@
+[
+  {
+    "id": "shipping",
+    "title": "SIM delivery",
+    "keywords": [
+      "寄卡",
+      "邮寄",
+      "delivery",
+      "shipping",
+      "pos sim",
+      "hantar sim"
+    ],
+    "answers": {
+      "zh": "我们可安排把 SIM 寄给顾客。收到 SIM 后，顾客需按照 TuneTalk 指定方式自行完成实名注册；需要协助可联系 WhatsApp。",
+      "en": "SIM delivery can be arranged. After receiving it, the customer must complete identity registration through the TuneTalk-authorised method. Contact WhatsApp for help.",
+      "ms": "Penghantaran SIM boleh diatur. Selepas menerima SIM, pelanggan perlu melengkapkan pendaftaran identiti melalui kaedah yang dibenarkan TuneTalk. Hubungi WhatsApp untuk bantuan."
+    },
+    "enabled": true
+  },
+  {
+    "id": "hours",
+    "title": "Business hours",
+    "keywords": [
+      "营业时间",
+      "几点开",
+      "business hours",
+      "opening hours",
+      "waktu operasi",
+      "pukul berapa buka"
+    ],
+    "answers": {
+      "zh": "营业时间为下午 1:00 至晚上 10:00。到店前建议先通过 WhatsApp 确认。",
+      "en": "Business hours are 1:00 PM to 10:00 PM. Please confirm by WhatsApp before visiting.",
+      "ms": "Waktu operasi ialah 1:00 petang hingga 10:00 malam. Sila sahkan melalui WhatsApp sebelum datang."
+    },
+    "enabled": true
+  },
+  {
+    "id": "contact",
+    "title": "Contact",
+    "keywords": [
+      "电话",
+      "号码",
+      "contact",
+      "phone",
+      "whatsapp number",
+      "nombor",
+      "hubungi"
+    ],
+    "answers": {
+      "zh": "WhatsApp 联系号码：010-5377777。",
+      "en": "WhatsApp contact: 010-5377777.",
+      "ms": "Nombor WhatsApp: 010-5377777."
+    },
+    "enabled": true
+  }
+]
